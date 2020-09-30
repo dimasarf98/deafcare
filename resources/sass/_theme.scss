@@ -1,0 +1,35 @@
+.square {
+    @extend .position-relative;
+}
+
+.square::after{
+    content: "";
+    @extend .d-block;
+    padding-bottom: 100%
+}
+
+.square > * {
+    @extend .position-absolute;
+}
+
+.rounded-xl {
+    border-radius: 0.5rem;
+}
+
+.navigation a {
+    @extend .text-decoration-none;
+    color: grey !important;
+    transition: color 0.25s;
+}
+
+.navigation a:hover {
+    @extend .text-danger;
+}
+
+.navigation a.active {
+    @extend .text-danger;
+}
+
+a.card-module{
+    @extend .text-decoration-none;
+}
