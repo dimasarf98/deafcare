@@ -13,7 +13,7 @@
 }
 
 .rounded-xl {
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
 }
 
 .navigation a {
@@ -32,4 +32,9 @@
 
 a.card-module{
     @extend .text-decoration-none;
+}
+
+a.link-style-none {
+    @extend .text-decoration-none;
+    @extend .text-dark;
 }

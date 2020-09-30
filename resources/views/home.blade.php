@@ -2,7 +2,9 @@
 
 @section('content')
 <header class="sticky-top">
-    <x-title-bar/>
+    <x-title-bar
+        title="Halaman Utama"
+    />
 </header>
 <main class="px-4 pt-4" style="padding-bottom: 64px">
     <div class="row">
@@ -17,7 +19,7 @@
             <x-card-module
                 icon-class="fas fa-stethoscope"
                 title="Kesehatan"
-                url="#"
+                :url="route('kesehatan')"
             />
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">

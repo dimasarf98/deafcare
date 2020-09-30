@@ -1,3 +1,10 @@
 <div class="w-100 bg-white px-3 py-3 shadow-sm">
-    <h3 class="mb-0 font-weight-bold">Halaman Utama</h3>
+    <h4 class="mb-0 font-weight-bold text-truncate">
+        @if ($backUrl)
+            <a href="{{$backUrl}}" class="mr-2 text-dark">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        @endif
+        {{$title}}
+    </h4>
 </div>
