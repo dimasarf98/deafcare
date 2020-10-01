@@ -38,8 +38,11 @@
                     <div class="card rounded-xl">
                         <div class="card-body text-center">
                             <img class="rounded mr-3 w-100 mb-3" src="/img/dummy.jpg" alt="..." style="object-fit:cover">
-                            <p class="font-weight-bold mb-2" style="line-height:1rem">{{item.name}}</p>
-                            <p class="mb-2">Rp. {{item.price}}</p>
+                            <p class="font-weight-bold mb-1" style="line-height:1rem">{{item.name}}</p>
+                            <p class="mb-1">
+                                <small><i class="fas fa-store mr-1"></i> {{item.shop}}</small>
+                            </p>
+                            <p class="mb-1">Rp. {{item.price}}</p>
                             <a v-if="item.qty == 0" class="btn btn-danger btn-sm px-3 py-1 rounded-pill" type="button" v-on:click="addItem(item)">Belanja</a>
                             <div v-else>
                                 <a class="btn btn-outline-danger btn-sm px-2 py-1 mr-2" v-on:click="removeItem(item)">
@@ -72,30 +75,35 @@
                         id: 1,
                         name: 'Alat Bantu Dengar Tanpa Kabel',
                         price: 200000,
+                        shop: 'Media Dengar',
                         qty: 0
                     },
                     {
                         id: 2,
                         name: 'Mainan Edukatif Media Terapi',
                         price: 40000,
+                        shop: 'Media Dengar',
                         qty: 0
                     },
                     {
                         id: 3,
                         name: 'Hearing and Brush',
                         price: 30000,
+                        shop: 'Media Dengar',
                         qty: 0
                     },
                     {
                         id: 4,
                         name: 'Buku Cerita Anak Berkebutuhan Khusus',
                         price: 50000,
+                        shop: 'Media Dengar',
                         qty: 0
                     },
                     {
                         id: 5,
                         name: 'Buku Cerita Anak Berkebutuhan Khusus',
                         price: 50000,
+                        shop: 'Media Dengar',
                         qty: 0
                     },
                 ].map((item) => {
