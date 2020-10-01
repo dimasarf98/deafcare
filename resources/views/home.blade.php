@@ -47,7 +47,7 @@
             <x-card-module
                 icon-class="fas fa-deaf"
                 title="Tes Pendengaran"
-                url="#"
+                :url="route('tespendengaran')"
             />
         </div>
     </div>

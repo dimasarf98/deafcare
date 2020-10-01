@@ -41,6 +41,12 @@ Route::get('/belanja/keranjang', function() {
 Route::get('/informasi', function() {
     return view('information.index');
 })->name('informasi');
+Route::get('/tespendengaran', function() {
+    return view('hearingtest.index');
+})->name('tespendengaran');
+Route::get('/tespendengaran/show', function() {
+    return view('hearingtest.show');
+})->name('tespendengaran.show');
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
