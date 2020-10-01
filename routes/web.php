@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Sementara
+Route::get('/kesehatan', function() {
+    return view('health.index');
+})->name('kesehatan');
+Route::get('/kesehatan/dokter', function() {
+    return view('health.doctor.index');
+})->name('kesehatan.dokter');
+Route::get('/forum', function() {
+    return view('forum.index');
+})->name('forum');
+Route::get('/belanja', function() {
+    return view('shopping.index');
+})->name('belanja');
+Route::get('/belanja/keranjang', function() {
+    return view('shopping.cart');
+})->name('belanja.keranjang');
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
