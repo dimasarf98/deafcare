@@ -38,6 +38,9 @@ Route::get('/belanja', function() {
 Route::get('/belanja/keranjang', function() {
     return view('shopping.cart');
 })->name('belanja.keranjang');
+Route::get('/informasi', function() {
+    return view('information.index');
+})->name('informasi');
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {

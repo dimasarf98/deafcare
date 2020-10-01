@@ -33,7 +33,7 @@
             <x-card-module
                 icon-class="fas fa-bullhorn"
                 title="Informasi"
-                url="#"
+                :url="route('informasi')"
             />
         </div>
         <div class="col-6 mb-4">
