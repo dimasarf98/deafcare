@@ -1,6 +1,6 @@
 <template>
     <div>
-        <main class="px-3 pt-3">
+        <main class="px-3 pt-3" style="padding-bottom: 80px">
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex mb-3" v-for="(cart, index) in carts" :key="index">
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-100 text-right" v-if="carts.length">
+                    <div class="w-100 text-right mb-3" v-if="carts.length">
                         <a href="/belanja" class="text-danger">+ Tambah Barang</a>
                     </div>
                     <div class="text-center" v-else>
