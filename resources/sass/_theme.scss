@@ -1,3 +1,7 @@
+.container-phone {
+    max-width: 480px;
+}
+
 .square {
     @extend .position-relative;
 }
