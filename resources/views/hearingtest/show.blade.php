@@ -53,8 +53,7 @@
                             </small>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a href="" class="badge badge-success rounded-pill px-3 py-1 mr-2">Chat</a>
-                            <a href="" class="badge badge-secondary rounded-pill px-3 py-1">Jadwal</a>
+                            <a href="" class="badge badge-success rounded-pill px-3 py-1">Jadwal</a>
                         </div>
                     </div>
                 </div>

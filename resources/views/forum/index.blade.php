@@ -10,7 +10,19 @@
 <main class="px-3 py-3">
     <div class="row mb-3">
         <div class="col-12">
-            <div class="btn-group w-100" role="group" aria-label="Basic example">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Cari komunitas atau sekolah" aria-label="Cari komunitas atau sekolah" aria-describedby="btn-search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="btn-search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="btn-group w-100" role="group" aria-label="Category">
                 <button type="button" class="btn btn-danger">Komunitas</button>
                 <button type="button" class="btn btn-outline-danger">Sekolah</button>
             </div>
