@@ -4,7 +4,7 @@
 <header class="sticky-top">
     <x-title-bar
         title="Dokter Spesialis Telinga Hidung Tenggorokan"
-        :back-url="route('kesehatan')"
+        :back-url="route('deafcare.kesehatan.jenis.index')"
     />
 </header>
 <main class="px-3 pt-3" style="padding-bottom: 64px">

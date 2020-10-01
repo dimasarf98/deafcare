@@ -4,7 +4,7 @@
 <header class="sticky-top">
     <x-title-bar
         title="Hearing Center"
-        :back-url="route('tespendengaran')"
+        :back-url="route('deafcare.tespendengaran.jenis.index')"
     />
 </header>
 <main class="px-3 py-3">

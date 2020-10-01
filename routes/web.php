@@ -20,7 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 // Sementara
 Route::get('/kesehatan', function() {
@@ -50,6 +49,7 @@ Route::get('/tespendengaran/show', function() {
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::prefix('kesehatan')->name('kesehatan.')->group(function()
     {
         Route::resource('jenis', 'JenisKesehatanController', [
@@ -83,11 +83,15 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
         Route::resource('item', 'BelanjaController', [
             'only' => ['index','show']
         ]);
+        Route::get('cart', 'BelanjaController@cart')->name('cart');
         Route::resource('transaksi', 'TransaksiController');
     });
 
     Route::prefix('tespendengaran')->name('tespendengaran.')->group(function()
     {
+        Route::resource('jenis', 'JenisPendengaranController',[
+            'only' => ['index']
+        ]);
         Route::resource('hearingcenter', 'HearingCenterController', [
             'only' => ['index','show']
         ]);
