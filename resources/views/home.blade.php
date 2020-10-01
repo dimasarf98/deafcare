@@ -26,7 +26,7 @@
             <x-card-module
                 icon-class="fas fa-hands-helping"
                 title="Forum"
-                url="#"
+                :url="route('forum')"
             />
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">

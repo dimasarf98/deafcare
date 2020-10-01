@@ -30,3 +30,6 @@ Route::get('/kesehatan', function() {
 Route::get('/kesehatan/dokter', function() {
     return view('health.doctor.index');
 })->name('kesehatan.dokter');
+Route::get('/forum', function() {
+    return view('forum.index');
+})->name('forum');
