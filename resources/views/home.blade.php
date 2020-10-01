@@ -40,7 +40,7 @@
             <x-card-module
                 icon-class="fas fa-shopping-bag"
                 title="Belanja"
-                url="#"
+                :url="route('belanja')"
             />
         </div>
         <div class="col-6 mb-4">

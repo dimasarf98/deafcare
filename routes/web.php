@@ -33,3 +33,9 @@ Route::get('/kesehatan/dokter', function() {
 Route::get('/forum', function() {
     return view('forum.index');
 })->name('forum');
+Route::get('/belanja', function() {
+    return view('shopping.index');
+})->name('belanja');
+Route::get('/belanja/keranjang', function() {
+    return view('shopping.cart');
+})->name('belanja.keranjang');
