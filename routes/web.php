@@ -49,7 +49,7 @@ Route::get('/tespendengaran/show', function() {
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('home', 'HomeController@index')->name('home');
     Route::prefix('kesehatan')->name('kesehatan.')->group(function()
     {
         Route::resource('jenis', 'JenisKesehatanController', [

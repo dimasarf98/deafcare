@@ -4,12 +4,12 @@
             <div class="w-100 bg-white px-3 py-3 shadow-sm">
                 <h4 class="mb-0 font-weight-bold text-truncate d-flex align-items-center justify-content-between">
                     <div>
-                        <a href="route(home)" class="mr-2 text-dark">
+                        <a href="/deafcare/home" class="mr-2 text-dark">
                             <i class="fas fa-arrow-left"></i>
                         </a>
                         Belanja
                     </div>
-                    <a href="route('deafcare.belanja.cart')" class="link-style-none">
+                    <a href="/deafcare/belanja/cart" class="link-style-none">
                         <i class="fas fa-shopping-cart"></i>
                         <span v-if="carts.length" class="badge badge-danger py-1 rounded-lg position-absolute mr-1 mt-1" style="top:0; right:0;">
                             <small>

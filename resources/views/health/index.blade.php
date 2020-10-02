@@ -4,7 +4,7 @@
 <header class="sticky-top">
     <x-title-bar
         title="Kesehatan"
-        :back-url="route('home')"
+        :back-url="route('deafcare.home')"
     />
 </header>
 <main class="px-3 pt-3" style="padding-bottom: 64px">

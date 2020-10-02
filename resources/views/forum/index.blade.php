@@ -4,7 +4,7 @@
 <header class="sticky-top">
     <x-title-bar
         title="Forum"
-        :back-url="route('home')"
+        :back-url="route('deafcare.home')"
     />
 </header>
 <main class="px-3 py-3">
