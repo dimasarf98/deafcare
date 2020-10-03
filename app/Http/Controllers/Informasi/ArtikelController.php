@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Informasi;
 
 use Illuminate\Http\Request;
 
-class JenisKesehatanController extends Controller
+class ArtikelController extends Controller
 {
     public function index()
     {
-        return view('health.index');
+        return view('information.index');
     }
 
     public function create()

@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-12">
             <x-health-item
-                :url="route('deafcare.kesehatan.tenagaKesehatan.show',1)"
+                :url="route('deafcare.kesehatan.user.tenagaKesehatan.show',1)"
                 :imgSrc="asset('img/dummy.jpg')"
                 title="Dokter Spesialis Telinga Hidung Tenggorokan"
                 description="Dapatkan diagnosa dan perawatan medis dari dokter THT"

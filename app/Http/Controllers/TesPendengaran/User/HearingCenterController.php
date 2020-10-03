@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\TesPendengaran\User;
 
 use Illuminate\Http\Request;
 
-class KomunitasController extends Controller
+class HearingCenterController extends Controller
 {
     public function index()
     {
-        return view('forum.index');
+        return view('hearingtest.show');
     }
 
     public function create()

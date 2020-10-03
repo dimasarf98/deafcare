@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Belanja\User;
 
 use Illuminate\Http\Request;
 
-class TenagaKesehatanController extends Controller
+class BelanjaController extends Controller
 {
     public function index()
     {
-        //
+        return view('shopping.index');
     }
 
     public function create()
@@ -23,7 +23,7 @@ class TenagaKesehatanController extends Controller
 
     public function show($id)
     {
-        return view('health.doctor.index');
+        //
     }
 
     public function edit($id)
@@ -39,5 +39,10 @@ class TenagaKesehatanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function cart()
+    {
+        return view('shopping.cart');
     }
 }

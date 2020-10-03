@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Kesehatan\User;
 
 use Illuminate\Http\Request;
 
-class HearingCenterController extends Controller
+class JenisKesehatanController extends Controller
 {
     public function index()
     {
-        return view('hearingtest.show');
+        return view('health.index');
     }
 
     public function create()

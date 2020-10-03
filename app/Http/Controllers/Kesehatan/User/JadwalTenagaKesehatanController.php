@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Kesehatan\User;
 
 use Illuminate\Http\Request;
 
-class RumahSakitController extends Controller
+class JadwalTenagaKesehatanController extends Controller
 {
     /**
      * Display a listing of the resource.

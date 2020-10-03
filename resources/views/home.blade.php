@@ -19,14 +19,14 @@
             <x-card-module
                 icon-class="fas fa-stethoscope"
                 title="Kesehatan"
-                :url="route('deafcare.kesehatan.jenis.index')"
+                :url="route('deafcare.kesehatan.user.jenis.index')"
             />
         </div>
         <div class="col-6 mb-4">
             <x-card-module
                 icon-class="fas fa-hands-helping"
                 title="Forum"
-                :url="route('deafcare.forum.komunitas.index')"
+                :url="route('deafcare.forum.user.komunitas.index')"
             />
         </div>
         <div class="col-6 mb-4">
@@ -40,14 +40,14 @@
             <x-card-module
                 icon-class="fas fa-shopping-bag"
                 title="Belanja"
-                :url="route('deafcare.belanja.item.index')"
+                :url="route('deafcare.belanja.user.item.index')"
             />
         </div>
         <div class="col-6 mb-4">
             <x-card-module
                 icon-class="fas fa-deaf"
                 title="Tes Pendengaran"
-                :url="route('deafcare.tespendengaran.jenis.index')"
+                :url="route('deafcare.tespendengaran.user.jenis.index')"
             />
         </div>
     </div>

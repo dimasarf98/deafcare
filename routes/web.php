@@ -50,55 +50,67 @@ Route::get('/tespendengaran/show', function() {
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
     Route::get('home', 'HomeController@index')->name('home');
-    Route::prefix('kesehatan')->name('kesehatan.')->group(function()
+    Route::namespace('Kesehatan')->prefix('kesehatan')->name('kesehatan.')->group(function()
     {
-        Route::resource('jenis', 'JenisKesehatanController', [
-            'only' => ['index','show']
-        ]);
-        Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
-            'only' => ['index','show']
-        ]);
+        Route::namespace('User')->prefix('user')->name('user.')->group(function()
+        {
+            Route::resource('jenis', 'JenisKesehatanController', [
+                'only' => ['index','show']
+            ]);
+            Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
+                'only' => ['index','show']
+            ]);
+        });
 
     });
 
-    Route::prefix('forum')->name('forum.')->group(function()
+    Route::namespace('Forum')->prefix('forum')->name('forum.')->group(function()
     {
-        Route::resource('komunitas', 'KomunitasController', [
-            'only' => ['index','show']
-        ]);
-        Route::resource('sekolah', 'SekolahController', [
-            'only' => ['index','show']
-        ]);
+        Route::namespace('User')->prefix('user')->name('user.')->group(function()
+        {
+            Route::resource('komunitas', 'KomunitasController', [
+                'only' => ['index','show']
+            ]);
+            Route::resource('sekolah', 'SekolahController', [
+                'only' => ['index','show']
+            ]);
+        });
     });
 
-    Route::prefix('informasi')->name('informasi.')->group(function()
+    Route::namespace('Informasi')->prefix('informasi')->name('informasi.')->group(function()
     {
         Route::resource('artikel', 'ArtikelController', [
             'only' => ['index','show']
         ]);
     });
 
-    Route::prefix('belanja')->name('belanja.')->group(function()
+    Route::namespace('Belanja')->prefix('belanja')->name('belanja.')->group(function()
     {
-        Route::resource('item', 'BelanjaController', [
-            'only' => ['index','show']
-        ]);
-        Route::get('cart', 'BelanjaController@cart')->name('cart');
-        Route::resource('transaksi', 'TransaksiController');
+        Route::namespace('User')->prefix('user')->name('user.')->group(function()
+        {   
+            Route::resource('item', 'BelanjaController', [
+                'only' => ['index','show']
+            ]);
+            Route::get('cart', 'BelanjaController@cart')->name('cart');
+            Route::resource('transaksi', 'TransaksiController');
+        });
     });
 
-    Route::prefix('tespendengaran')->name('tespendengaran.')->group(function()
+    Route::namespace('TesPendengaran')->prefix('tespendengaran')->name('tespendengaran.')->group(function()
     {
-        Route::resource('jenis', 'JenisPendengaranController',[
-            'only' => ['index']
-        ]);
-        Route::resource('hearingcenter', 'HearingCenterController', [
-            'only' => ['index','show']
-        ]);
+        Route::namespace('User')->prefix('user')->name('user.')->group(function()
+        {
+            Route::resource('jenis', 'JenisPendengaranController',[
+                'only' => ['index']
+            ]);
+            Route::resource('hearingcenter', 'HearingCenterController', [
+                'only' => ['index','show']
+            ]);
 
-        Route::resource('rumahsakit', 'RumahSakitController', [
-            'only' => ['index','show']
-        ]);
+            Route::resource('rumahsakit', 'RumahSakitController', [
+                'only' => ['index','show']
+            ]);
+        });
     });
     
 });

@@ -9,7 +9,7 @@
                         </a>
                         Belanja
                     </div>
-                    <a href="/deafcare/belanja/cart" class="link-style-none">
+                    <a href="/deafcare/belanja/user/cart" class="link-style-none">
                         <i class="fas fa-shopping-cart"></i>
                         <span v-if="carts.length" class="badge badge-danger py-1 rounded-lg position-absolute mr-1 mt-1" style="top:0; right:0;">
                             <small>

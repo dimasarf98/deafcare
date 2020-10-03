@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Kesehatan\User;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Kesehatan\User;
 
-class JenisPendengaranController extends Controller
+class TenagaKesehatanController extends Controller
 {
     public function index()
     {
-        return view('hearingtest.index');
+        //
     }
 
     public function create()
@@ -23,7 +23,7 @@ class JenisPendengaranController extends Controller
 
     public function show($id)
     {
-        //
+        return view('health.doctor.index');
     }
 
     public function edit($id)
