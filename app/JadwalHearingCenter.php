@@ -9,6 +9,6 @@ class JadwalHearingCenter extends Model
     protected $fillable = ['hearing_center_id', 'jam'];
     public function hearingCenter()
     {
-        return $this->belongsTo('app\HearingCenter');
+        return $this->belongsTo('App\HearingCenter');
     }
 }

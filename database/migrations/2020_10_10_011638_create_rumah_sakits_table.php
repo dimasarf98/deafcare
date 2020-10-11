@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJadwalTenagaKesehatanJamsTable extends Migration
+class CreateRumahSakitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateJadwalTenagaKesehatanJamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('jadwal_tenaga_kesehatan_jams', function (Blueprint $table) {
+        Schema::create('rumah_sakits', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jadwal_tenaga_kesehatan_tempat');
-            $table->string('jam');
+            $table->string('nama');
+            $table->longText('alamat');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateJadwalTenagaKesehatanJamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwal_tenaga_kesehatan_jams');
+        Schema::dropIfExists('rumah_sakits');
     }
 }

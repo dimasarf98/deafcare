@@ -9,6 +9,6 @@ class JadwalRumahSakitPendengaran extends Model
     protected $fillable = ['rumah_sakit_pendengaran_id', 'jam'];
     public function rumahSakitPendengaran()
     {
-        return $this->belongsTo('app\JadwalRumahSakitPendengaran');
+        return $this->belongsTo('App\JadwalRumahSakitPendengaran');
     }
 }

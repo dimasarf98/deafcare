@@ -9,6 +9,6 @@ class Kategori extends Model
     protected $fillable = ['nama'];
     public function artikels()
     {
-        return $this->belongsToMany('app\Artikel');
+        return $this->belongsToMany('App\Artikel');
     }
 }

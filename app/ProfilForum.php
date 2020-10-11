@@ -9,6 +9,6 @@ class ProfilForum extends Model
     protected $fillable = ['forum_id', 'deskripsi','gambar'];
     public function forum()
     {
-        return $this->belongsTo('app\Forum');
+        return $this->belongsTo('App\Forum');
     }
 }

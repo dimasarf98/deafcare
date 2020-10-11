@@ -9,6 +9,6 @@ class KegiatanForum extends Model
     protected $fillable = ['forum_id', 'gambar','aktivitas'];
     public function forum()
     {
-        return $this->belongsTo('app\Forum');
+        return $this->belongsTo('App\Forum');
     }
 }

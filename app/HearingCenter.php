@@ -9,6 +9,6 @@ class HearingCenter extends Model
     protected $fillable = ['nama', 'alamat','no_telp'];
     public function jadwals()
     {
-        return $this->hasMany('app\JadwalHearingCenter');
+        return $this->hasMany('App\JadwalHearingCenter');
     }
 }

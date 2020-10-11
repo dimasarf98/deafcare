@@ -9,11 +9,11 @@ class Forum extends Model
     protected $fillable = ['nama', 'alamat','no_telp'];
     public function profilForum()
     {
-        return $this->hasOne('app\ProfilForum');
+        return $this->hasOne('App\ProfilForum');
     }
 
     public function kegiatanForum()
     {
-        return $this->hasMany('app\KegiatanForum');
+        return $this->hasMany('App\KegiatanForum');
     }
 }

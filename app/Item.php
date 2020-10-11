@@ -10,6 +10,6 @@ class Item extends Model
 
     public function transaksis()
     {
-        return $this->belongsToMany('app\Transaksi');
+        return $this->belongsToMany('App\Transaksi');
     }
 }

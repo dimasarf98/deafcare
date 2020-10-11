@@ -10,6 +10,6 @@ class Transaksi extends Model
     
     public function items()
     {
-        return $this->belongsToMany('app\Item');
+        return $this->belongsToMany('App\Item');
     }
 }
