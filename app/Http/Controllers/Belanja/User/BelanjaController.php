@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Belanja\User;
 
+use App\Item;
 use Illuminate\Http\Request;
 
 class BelanjaController extends Controller
 {
     public function index()
     {
+        $items = Item::all();
         return view('shopping.index');
     }
 

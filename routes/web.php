@@ -60,6 +60,9 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
             Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
                 'only' => ['index','show']
             ]);
+            Route::resource('jadwal', 'JadwalTenagaKesehatanController', [
+                'only' => ['index','show']
+            ]);
         });
 
     });
@@ -74,6 +77,9 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
             Route::resource('sekolah', 'SekolahController', [
                 'only' => ['index','show']
             ]);
+
+            Route::get('komunitas/profil','KomunitasController@profil')->name('komunitas.profil');
+            Route::get('komunitas/kegiatan','KomunitasController@kegiatan')->name('komunitas.kegiatan');
         });
     });
 

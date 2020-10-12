@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\TesPendengaran\User;
 
+use App\RumahSakitPendengaran;
 use Illuminate\Http\Request;
 
 class RumahSakitController extends Controller
@@ -13,7 +14,7 @@ class RumahSakitController extends Controller
      */
     public function index()
     {
-        //
+        $rumahSakits = RumahSakitPendengaran::all();
     }
 
     /**
@@ -45,7 +46,7 @@ class RumahSakitController extends Controller
      */
     public function show($id)
     {
-        //
+        $jadwals = RumahSakitPendengaran::findorfail($id)->jadwals;
     }
 
     /**

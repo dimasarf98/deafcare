@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Kesehatan\User;
 
+use App\TenagaKesehatan;
 use Illuminate\Http\Request;
 
 class JadwalTenagaKesehatanController extends Controller
@@ -45,7 +46,7 @@ class JadwalTenagaKesehatanController extends Controller
      */
     public function show($id)
     {
-        //
+       $jadwals = TenagaKesehatan::findorfail($id)->rumahSakits;
     }
 
     /**

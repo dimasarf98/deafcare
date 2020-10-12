@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Forum\User;
 
+use App\Sekolah;
 use Illuminate\Http\Request;
 
 class SekolahController extends Controller
@@ -13,7 +14,7 @@ class SekolahController extends Controller
      */
     public function index()
     {
-        //
+        $sekolah = Sekolah::all();
     }
 
     /**

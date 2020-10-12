@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Kesehatan\User;
 
+use App\JenisKesehatan;
 use Illuminate\Http\Request;
 
 class JenisKesehatanController extends Controller
 {
     public function index()
     {
+        $jenisKesehatan = JenisKesehatan::all();
         return view('health.index');
     }
 

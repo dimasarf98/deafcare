@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Kesehatan\User;
 
 use App\Http\Controllers\Kesehatan\User;
+use App\JenisKesehatan;
 
 class TenagaKesehatanController extends Controller
 {
@@ -23,6 +24,7 @@ class TenagaKesehatanController extends Controller
 
     public function show($id)
     {
+        $dokters = JenisKesehatan::findorfail($id)->tenagaKesehatans;
         return view('health.doctor.index');
     }
 
