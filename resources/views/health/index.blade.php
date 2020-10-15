@@ -7,7 +7,7 @@
         :back-url="route('deafcare.home')"
     />
 </header>
-<main class="px-3 pt-3" style="padding-bottom: 64px">
+<main class="px-3 pt-3">
     <div class="row">
         <div class="col-12">
             <div class="alert alert-warning" role="alert">
@@ -19,27 +19,17 @@
     </div>
     <div class="row">
         <div class="col-12">
+            @forelse ($jenisKesehatan as $jenis)
             <x-health-item
-                :url="route('deafcare.kesehatan.user.tenagaKesehatan.show',1)"
+                :url="route('deafcare.kesehatan.user.tenagaKesehatan.show', $jenis->id)"
                 :imgSrc="asset('img/dummy.jpg')"
-                title="Dokter Spesialis Telinga Hidung Tenggorokan"
-                description="Dapatkan diagnosa dan perawatan medis dari dokter THT"
+                :title="$jenis->judul"
+                :description="$jenis->deskripsi"
                 class="mb-3"
-            />
-            <x-health-item
-                url="#"
-                :imgSrc="asset('img/dummy.jpg')"
-                title="Dokter Spesialis Anak"
-                description="Konsultasikan kesehatan anak anda dengan kami"
-                class="mb-3"
-            />
-            <x-health-item
-                url="#"
-                :imgSrc="asset('img/dummy.jpg')"
-                title="Dokter Spesialisasi Rehabilitasi Medis"
-                description="Lakukan rehabilitasi medis dengan dokter pilihan anda"
-                class="mb-3"
-            />
+            />                
+            @empty
+  
+            @endforelse
         </div>
     </div>
 </main>

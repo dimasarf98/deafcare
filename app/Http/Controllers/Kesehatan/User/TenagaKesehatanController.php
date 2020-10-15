@@ -24,8 +24,9 @@ class TenagaKesehatanController extends Controller
 
     public function show($id)
     {
-        $dokters = JenisKesehatan::findorfail($id)->tenagaKesehatans;
-        return view('health.doctor.index');
+        $jenisKesehatan = JenisKesehatan::findorfail($id);
+        $dokters = $jenisKesehatan->tenagaKesehatans;
+        return view('health.doctor.index', compact('jenisKesehatan', 'dokters'));
     }
 
     public function edit($id)

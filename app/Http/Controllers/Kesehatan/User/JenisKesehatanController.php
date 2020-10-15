@@ -10,7 +10,7 @@ class JenisKesehatanController extends Controller
     public function index()
     {
         $jenisKesehatan = JenisKesehatan::all();
-        return view('health.index');
+        return view('health.index', compact('jenisKesehatan'));
     }
 
     public function create()

@@ -14,4 +14,8 @@ class TenagaKesehatan extends Model
                 ->withPivot(['jam','tarif_konsultasi','tarif_buat_janji'])
                 ->withTimestamps();
     }
+
+    public function jenisKesehatan(){
+        return $this->belongsTo('App\JenisKesehatan');
+    }
 }

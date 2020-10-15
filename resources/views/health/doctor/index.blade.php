@@ -3,11 +3,11 @@
 @section('content')
 <header class="sticky-top">
     <x-title-bar
-        title="Dokter Spesialis Telinga Hidung Tenggorokan"
+        :title="$jenisKesehatan->judul"
         :back-url="route('deafcare.kesehatan.user.jenis.index')"
     />
 </header>
-<main class="px-3 pt-3" style="padding-bottom: 64px">
+<main class="px-3 pt-3">
     <div class="row mb-3">
         <div class="col-12">
             <div class="input-group">
@@ -27,30 +27,29 @@
     </div>
     <div class="row">
         <div class="col-12">
+            @forelse ($dokters as $dokter)
             <div class = 'card rounded-xl link-style-none mb-3' href="#">
                 <div class="card-body d-flex">
                     <img class="rounded mr-3" src="{{asset('img/dummy.jpg')}}" alt="..." style="width: 90px; height:90px; object-fit:cover">
                     <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
                         <div>
-                            <p class="font-weight-bold mb-1 text-truncate" style="line-height:1rem">dr. Candra Syaputra, Sp.THT-KL</p>
+                            <p class="font-weight-bold mb-1 text-truncate" style="line-height:1rem">{{$dokter->nama}}</p>
                             <p class="mb-0">
                                 <small>
-                                    <i class="fas fa-heart mr-1"></i> 100% <i class="fa fa-briefcase ml-3 mr-1"></i> 3 tahun
-                                </small>
-                            </p>
-                            <p class="mb-0">
-                                <small>
-                                    Rp. 100.000
+                                    <i class="fa fa-briefcase mr-1"></i> {{$dokter->pengalaman}}
                                 </small>
                             </p>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a href="" class="badge badge-success rounded-pill px-3 py-1 mr-2">Chat</a>
-                            <a href="" class="badge badge-secondary rounded-pill px-3 py-1">Jadwal</a>
+                            {{-- <a href="" class="badge badge-success rounded-pill px-3 py-1 mr-2">Chat</a> --}}
+                            <a href="{{route('deafcare.kesehatan.user.jadwal.show', $dokter->id)}}" class="badge badge-danger rounded-pill px-3 py-1">Jadwal</a>
                         </div>
                     </div>
                 </div>
             </div>
+            @empty
+                
+            @endforelse
         </div>
     </div>
 </main>

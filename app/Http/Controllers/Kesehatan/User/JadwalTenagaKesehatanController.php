@@ -46,7 +46,10 @@ class JadwalTenagaKesehatanController extends Controller
      */
     public function show($id)
     {
-       $jadwals = TenagaKesehatan::findorfail($id)->rumahSakits;
+        $dokter = TenagaKesehatan::findorfail($id);
+        $jadwals = $dokter->rumahSakits;
+
+        return view('health.doctor.show', compact('dokter', 'jadwals'));
     }
 
     /**
