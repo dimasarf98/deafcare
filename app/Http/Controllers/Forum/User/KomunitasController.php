@@ -28,7 +28,7 @@ class KomunitasController extends Controller
         $kegiatans = Forum::findorfail($id)->kegiatanForum;
     }
 
-    public function store(Request $request)
+    public function store()
     {
         //
     }

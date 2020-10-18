@@ -21,7 +21,7 @@ class ArtikelController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store()
     {
         //
     }

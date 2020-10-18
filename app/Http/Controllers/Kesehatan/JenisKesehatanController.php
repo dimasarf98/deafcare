@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Kesehatan\User;
+namespace App\Http\Controllers\Kesehatan;
 
 use App\JenisKesehatan;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ class JenisKesehatanController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store()
     {
         //
     }

@@ -16,7 +16,7 @@ class JenisPendengaranController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store()
     {
         //
     }
