@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\TesPendengaran\User;
+namespace App\Http\Controllers\TesPendengaran;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

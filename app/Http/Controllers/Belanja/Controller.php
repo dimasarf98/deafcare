@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Belanja\User;
+namespace App\Http\Controllers\Belanja;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

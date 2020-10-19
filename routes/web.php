@@ -47,8 +47,8 @@ Route::get('/tespendengaran/show', function() {
     return view('hearingtest.show');
 })->name('tespendengaran.show');
 
-// Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
-Route::prefix('deafcare')->name('deafcare.')->group(function ()
+Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
+// Route::prefix('deafcare')->name('deafcare.')->group(function ()
 {
     Route::get('home', 'HomeController@index')->name('home');
     Route::namespace('Kesehatan')->prefix('kesehatan')->name('kesehatan.')->group(function()
@@ -79,11 +79,24 @@ Route::prefix('deafcare')->name('deafcare.')->group(function ()
             ]);
         });
 
+        Route::prefix('tenagakesehatan')->name('tenagakesehatan.')->group(function()
+        {
+            Route::resource('jenis', 'JenisKesehatanController', [
+                'only' => ['edit','update']
+            ]);
+            Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
+                'only' => ['edit','update']
+            ]);
+            Route::resource('jadwal', 'JadwalTenagaKesehatanController', [
+                'only' => ['edit','update']
+            ]);
+        });
+
     });
 
     Route::namespace('Forum')->prefix('forum')->name('forum.')->group(function()
     {
-        Route::namespace('User')->prefix('user')->name('user.')->group(function()
+        Route::prefix('user')->name('user.')->group(function()
         {
             Route::resource('komunitas', 'KomunitasController', [
                 'only' => ['index','show']
@@ -95,18 +108,26 @@ Route::prefix('deafcare')->name('deafcare.')->group(function ()
             Route::get('komunitas/profil','KomunitasController@profil')->name('komunitas.profil');
             Route::get('komunitas/kegiatan','KomunitasController@kegiatan')->name('komunitas.kegiatan');
         });
+ 
+        Route::prefix('admin')->name('admin.')->group(function()
+        {
+            Route::resource('komunitas', 'KomunitasController', [
+                'only' => ['create','store', 'edit','update']
+            ]);
+            Route::resource('sekolah', 'SekolahController', [
+                'only' => ['create','store', 'edit','update']
+            ]);
+        });
     });
 
     Route::namespace('Informasi')->prefix('informasi')->name('informasi.')->group(function()
     {
-        Route::resource('artikel', 'ArtikelController', [
-            'only' => ['index','show']
-        ]);
+        Route::resource('artikel', 'ArtikelController');
     });
 
     Route::namespace('Belanja')->prefix('belanja')->name('belanja.')->group(function()
     {
-        Route::namespace('User')->prefix('user')->name('user.')->group(function()
+        Route::prefix('user')->name('user.')->group(function()
         {   
             Route::resource('item', 'BelanjaController', [
                 'only' => ['index','show']
@@ -114,11 +135,18 @@ Route::prefix('deafcare')->name('deafcare.')->group(function ()
             Route::get('cart', 'BelanjaController@cart')->name('cart');
             Route::resource('transaksi', 'TransaksiController');
         });
+
+        Route::prefix('vendor')->name('vendor.')->group(function()
+        {   
+            Route::resource('item', 'BelanjaController', [
+                'only' => ['create','store','edit','update','destroy']
+            ]);
+        });
     });
 
     Route::namespace('TesPendengaran')->prefix('tespendengaran')->name('tespendengaran.')->group(function()
     {
-        Route::namespace('User')->prefix('user')->name('user.')->group(function()
+        Route::prefix('user')->name('user.')->group(function()
         {
             Route::resource('jenis', 'JenisPendengaranController',[
                 'only' => ['index']
@@ -129,6 +157,17 @@ Route::prefix('deafcare')->name('deafcare.')->group(function ()
 
             Route::resource('rumahsakit', 'RumahSakitController', [
                 'only' => ['index','show']
+            ]);
+        });
+
+        Route::prefix('admin')->name('admin.')->group(function()
+        {
+            Route::resource('hearingcenter', 'HearingCenterController', [
+                'only' => ['index','show','create','store', 'edit','update','destroy']
+            ]);
+
+            Route::resource('rumahsakit', 'RumahSakitController', [
+                'only' => ['index','show','create','store', 'edit','update','destroy']
             ]);
         });
     });

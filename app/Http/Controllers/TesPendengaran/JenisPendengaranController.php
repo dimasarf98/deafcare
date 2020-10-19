@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Belanja\User;
+namespace App\Http\Controllers\TesPendengaran;
 
-use App\Item;
 use Illuminate\Http\Request;
 
-class BelanjaController extends Controller
+class JenisPendengaranController extends Controller
 {
     public function index()
     {
-        $items = Item::all();
-        return view('shopping.index');
+        return view('hearingtest.index');
     }
 
     public function create()
@@ -41,10 +39,5 @@ class BelanjaController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function cart()
-    {
-        return view('shopping.cart');
     }
 }

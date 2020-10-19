@@ -48,7 +48,8 @@ class TenagaKesehatanController extends Controller
         $response = TransformerTenagaKesehatan::make();
         $tenagaKesehatan = TenagaKesehatan::findorfail($id);
         $tenagaKesehatan->update($response->tenagaKesehatan);
-        $tenagaKesehatan->rumahSakits()->sync($response->jadwal);
+        $tenagaKesehatan->rumahSakits()->detach();
+        $tenagaKesehatan->rumahSakits()->attach($response->jadwal);
 
         //return view here
         return $response->jadwal[0]['rumah_sakit_id'];
