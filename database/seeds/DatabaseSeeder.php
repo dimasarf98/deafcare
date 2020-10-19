@@ -1,5 +1,6 @@
 <?php
 
+use App\HearingCenter;
 use App\JenisKesehatan;
 use Illuminate\Database\Seeder;
 
@@ -13,10 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            JenisKesehatanSeeder::class,
-            TenagaKesehatanSeeder::class,
-            RumahSakitSeeder::class,
-            JadwalTenagaKesehatanSeeder::class
+            // JenisKesehatanSeeder::class,
+            // TenagaKesehatanSeeder::class,
+            // RumahSakitSeeder::class,
+            // JadwalTenagaKesehatanSeeder::class
+            HearingCenterSeeder::class
         ]);
     }
 }
