@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Forum\User;
+namespace App\Http\Controllers\Forum;
 
 use App\Forum;
+use App\Transformer\Forum as TransformerForum;
 use Illuminate\Http\Request;
 
 class KomunitasController extends Controller
@@ -15,7 +16,7 @@ class KomunitasController extends Controller
 
     public function create()
     {
-        //
+        
     }
 
     public function profil($id)
@@ -30,7 +31,9 @@ class KomunitasController extends Controller
 
     public function store()
     {
-        //
+        $response = TransformerForum::make();
+        $forum = Forum::create($response->forum);
+        Forum::findorfail($forum->id)->profilForum()->create($response->profil);
     }
 
     public function show($id)
@@ -43,9 +46,12 @@ class KomunitasController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $response = TransformerForum::make();
+        $forum = Forum::findorfail($id);
+        $forum->update($response->forum);
+        $forum->profilForum()->update($response->profil);
     }
 
     public function destroy($id)

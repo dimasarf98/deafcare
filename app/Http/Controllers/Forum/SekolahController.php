@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Forum\User;
+namespace App\Http\Controllers\Forum;
 
 use App\Sekolah;
 use Illuminate\Http\Request;

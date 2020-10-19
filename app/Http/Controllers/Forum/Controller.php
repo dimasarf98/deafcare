@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Forum\User;
+namespace App\Http\Controllers\Forum;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
