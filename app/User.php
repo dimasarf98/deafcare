@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Artikel');
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
 }

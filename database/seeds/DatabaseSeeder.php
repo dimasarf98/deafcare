@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             // TenagaKesehatanSeeder::class,
             // RumahSakitSeeder::class,
             // JadwalTenagaKesehatanSeeder::class
-            HearingCenterSeeder::class
+            HearingCenterSeeder::class,
+            RumahSakitPendengaranSeeder::class,
+            RoleSeeder::class
         ]);
     }
 }
