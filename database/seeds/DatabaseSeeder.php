@@ -14,13 +14,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            // JenisKesehatanSeeder::class,
-            // TenagaKesehatanSeeder::class,
-            // RumahSakitSeeder::class,
-            // JadwalTenagaKesehatanSeeder::class
+            JenisKesehatanSeeder::class,
+            TenagaKesehatanSeeder::class,
+            RumahSakitSeeder::class,
+            JadwalTenagaKesehatanSeeder::class,
             HearingCenterSeeder::class,
             RumahSakitPendengaranSeeder::class,
-            RoleSeeder::class
+            RoleSeeder::class,
+            KomunitasSeeder::class,
+            SekolahSeeder::class
         ]);
     }
 }

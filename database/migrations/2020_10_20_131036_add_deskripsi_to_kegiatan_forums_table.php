@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilForumsTable extends Migration
+class AddDeskripsiToKegiatanForumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateProfilForumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('profil_forums', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('forum_id');
-            $table->longText('deskripsi');
-            $table->longText('gambar');
-            $table->timestamps();
+        Schema::table('kegiatan_forums', function (Blueprint $table) {
+            $table->longText('deskripsi')->after('aktivitas');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateProfilForumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profil_forums');
+        Schema::table('kegiatan_forums', function (Blueprint $table) {
+            //
+        });
     }
 }
