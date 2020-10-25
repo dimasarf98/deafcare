@@ -4,8 +4,7 @@
 <header class="sticky-top">
     <x-title-bar
         :title="$jenisKesehatan->judul"
-        :back-url="route('deafcare.kesehatan.user.jenis.index')"
-    />
+        :back-url="route('deafcare.kesehatan.user.jenis.index')"></x-title-bar>
 </header>
 <main class="px-3 pt-3">
     <div class="row mb-3">
@@ -40,17 +39,47 @@
                                 </small>
                             </p>
                         </div>
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-start">
                             {{-- <a href="" class="badge badge-success rounded-pill px-3 py-1 mr-2">Chat</a> --}}
-                            <a href="{{route('deafcare.kesehatan.user.jadwal.show', $dokter->id)}}" class="badge badge-danger rounded-pill px-3 py-1">Jadwal</a>
+                            <a href="{{route('deafcare.kesehatan.user.jadwal.show', $dokter->id)}}" class="badge badge-danger rounded-pill px-3 py-1 mr-2">Jadwal</a>
+                            <a href="{{route('deafcare.kesehatan.admin.tenagaKesehatan.edit', $dokter->id)}}" class="badge badge-success rounded-pill px-3 py-1 mr-2">Edit</a>
+                            <a href="#" class="badge badge-secondary rounded-pill px-3 py-1" data-toggle="modal" data-target="#modalHapusDokter-{{$dokter->id}}">Hapus</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalHapusDokter-{{$dokter->id}}" tabindex="-1" role="dialog" aria-labelledby="modalHapusDokter-{{$dokter->id}}Label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalHapusDokter-{{$dokter->id}}Label">Apakah anda yakin?</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Data tenaga kesehatan yang dipilih akan terhapus!
+                                        </div>
+                                        <form method="POST" action="{{route('deafcare.kesehatan.admin.tenagaKesehatan.destroy', $dokter->id)}}" class="modal-footer">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             @empty
-                
+
             @endforelse
         </div>
     </div>
+    <div  class="position-sticky ml-auto" style="right: 1rem; bottom: 1rem; width:72px; margin-top: -72px">
+        <a href="{{route('deafcare.kesehatan.admin.tenagaKesehatan.create')}}" class="shadow square bg-danger rounded-circle p-4 d-flex align-items-center justify-content-center">
+            <i class="fa fa-plus text-white fa-2x"></i>
+        </a>
+    </div>
+
 </main>
 @endsection

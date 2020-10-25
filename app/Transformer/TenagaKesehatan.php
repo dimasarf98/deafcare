@@ -14,14 +14,14 @@ class TenagaKesehatan
             'pengalaman' => request()->pengalaman
         ];
         $reponse->jadwal = [];
-        for ($i=0; $i < count(request()->rumahSakit); $i++) { 
+        for ($i=0; $i < count(request()->rumahsakit); $i++) {
             $reponse->jadwal[]=[
-                'rumah_sakit_id' => request()->rumahSakit[$i],
+                'rumah_sakit_id' => request()->rumahsakit[$i],
                 'jam' => request()->jam[$i],
                 'tarif_konsultasi' => request()->tarif_konsultasi[$i],
                 'tarif_buat_janji' => request()->tarif_buat_janji[$i],
             ];
-            
+
         }
         return $reponse;
     }

@@ -7,6 +7,7 @@ use App\JenisKesehatan;
 use App\RumahSakit;
 use App\TenagaKesehatan;
 use App\Transformer\TenagaKesehatan as TransformerTenagaKesehatan;
+use Illuminate\Http\Request;
 
 class TenagaKesehatanController extends Controller
 {
@@ -19,6 +20,8 @@ class TenagaKesehatanController extends Controller
     {
         $jenis = JenisKesehatan::all();
         $rumahSakits = RumahSakit::all();
+
+        return view('health.doctor.create', compact('jenis', 'rumahSakits'));
     }
 
     public function store()
@@ -26,7 +29,8 @@ class TenagaKesehatanController extends Controller
         $response = TransformerTenagaKesehatan::make();
         $tenagaKesehatan = TenagaKesehatan::create($response->tenagaKesehatan);
         TenagaKesehatan::findorfail($tenagaKesehatan->id)->rumahSakits()->attach($response->jadwal);
-        return $tenagaKesehatan->id;
+
+        return redirect(route('deafcare.kesehatan.user.tenagaKesehatan.show', request()->jenis_kesehatan_id));
     }
 
     public function show($id)
@@ -41,6 +45,8 @@ class TenagaKesehatanController extends Controller
         $jenis = JenisKesehatan::all();
         $rumahSakits = RumahSakit::all();
         $tenagaKesehatan = TenagaKesehatan::findorfail($id);
+
+        return view('health.doctor.edit', compact('jenis', 'rumahSakits', 'tenagaKesehatan'));
     }
 
     public function update($id)
@@ -51,8 +57,7 @@ class TenagaKesehatanController extends Controller
         $tenagaKesehatan->rumahSakits()->detach();
         $tenagaKesehatan->rumahSakits()->attach($response->jadwal);
 
-        //return view here
-        return $response->jadwal[0]['rumah_sakit_id'];
+        return redirect(route('deafcare.kesehatan.user.tenagaKesehatan.show', $tenagaKesehatan->jenisKesehatan->id));
     }
 
     public function destroy($id)
@@ -60,5 +65,7 @@ class TenagaKesehatanController extends Controller
         $tenagaKesehatan = TenagaKesehatan::findorfail($id);
         $tenagaKesehatan->rumahSakits()->detach();
         $tenagaKesehatan->delete();
+
+        return redirect(route('deafcare.kesehatan.user.tenagaKesehatan.show', $tenagaKesehatan->jenisKesehatan->id));
     }
 }

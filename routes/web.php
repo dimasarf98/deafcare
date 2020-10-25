@@ -72,7 +72,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
                 'only' => ['create','store', 'edit','update']
             ]);
             Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
-                'only' => ['create','store', 'edit','update']
+                'only' => ['create','store', 'edit','update', 'destroy']
             ]);
             Route::resource('jadwal', 'JadwalTenagaKesehatanController', [
                 'only' => ['create','store', 'edit','update']
@@ -108,7 +108,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
             Route::get('komunitas/profil','KomunitasController@profil')->name('komunitas.profil');
             Route::get('komunitas/kegiatan','KomunitasController@kegiatan')->name('komunitas.kegiatan');
         });
- 
+
         Route::prefix('admin')->name('admin.')->group(function()
         {
             Route::resource('komunitas', 'KomunitasController', [
@@ -128,7 +128,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
     Route::namespace('Belanja')->prefix('belanja')->name('belanja.')->group(function()
     {
         Route::prefix('user')->name('user.')->group(function()
-        {   
+        {
             Route::resource('item', 'BelanjaController', [
                 'only' => ['index','show']
             ]);
@@ -137,7 +137,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
         });
 
         Route::prefix('vendor')->name('vendor.')->group(function()
-        {   
+        {
             Route::resource('item', 'BelanjaController', [
                 'only' => ['create','store','edit','update','destroy']
             ]);
@@ -171,5 +171,5 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
             ]);
         });
     });
-    
+
 });
