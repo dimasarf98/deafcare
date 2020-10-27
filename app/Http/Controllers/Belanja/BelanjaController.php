@@ -11,7 +11,9 @@ class BelanjaController extends Controller
     public function index()
     {
         $items = Item::all();
-        return view('shopping.index');
+        return view('shopping.index',[
+            'items' => $items
+        ]);
     }
 
     public function create()

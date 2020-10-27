@@ -27,4 +27,19 @@ class TesPendengaran
         
         return $response;
     }
+
+    public static function makeJadwalRumahSakit()
+    {
+        $response = [];
+        for($i =0; $i < count(request()->hari); $i++) {
+            $response[] = [
+                'jam' => request()->jam[$i],
+                'hari' => request()->hari[$i],
+                'jadwal' => request()->jadwal[$i],
+                'biaya' => request()->biaya[$i],
+            ];
+        }
+        
+        return $response;
+    }
 }

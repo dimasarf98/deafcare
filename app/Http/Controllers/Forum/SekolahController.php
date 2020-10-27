@@ -3,83 +3,52 @@
 namespace App\Http\Controllers\Forum;
 
 use App\Sekolah;
+use App\Transformer\Sekolah as TransformerSekolah;
 use Illuminate\Http\Request;
 
 class SekolahController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $sekolah = Sekolah::all();
+        $sekolahs = Sekolah::all();
+        return view('schools.index' ,[
+            'sekolahs' => $sekolahs
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store()
     {
-        //
+        $response = TransformerSekolah::make();
+        $sekolah = Sekolah::create($response->sekolah);
+        Sekolah::findorfail($sekolah->id)->profilSekolah()->create($response->profil);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $sekolah = Sekolah::findorfail($id);
+        $response = TransformerSekolah::make();
+
+        $sekolah->update($response->sekolah);
+        $sekolah->profilSekolah()->update($response->sekolah);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Sekolah::findorfail($id)->delete();
     }
 }

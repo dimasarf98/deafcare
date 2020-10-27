@@ -11,12 +11,13 @@ class KomunitasController extends Controller
     public function index()
     {
         $forums = Forum::all();
-        return view('forum.index');
+        return view('forum.index' ,[
+            'forums' => $forums
+        ]);
     }
 
     public function create()
     {
-        
     }
 
     public function profil($id)

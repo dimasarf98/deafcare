@@ -39,7 +39,7 @@
         <div class="col-6 mb-4">
             <x-card-module
                 icon-class="fas fa-shopping-bag"
-                title="Belanja"
+                title="Alat Pendengaran"
                 :url="route('deafcare.belanja.user.item.index')"
             />
         </div>

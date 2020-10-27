@@ -13,8 +13,12 @@ class ArtikelController extends Controller
     public function index()
     {
         $tags = Kategori::all();
-        $articles = Artikel::all();
-        return view('information.index');
+        $articles = Artikel::latest()->get();
+        return view('information.index',[
+            'articles' => $articles,
+            'tags' => $tags,
+            'active' => 0
+        ]);
     }
 
     public function create()
@@ -55,5 +59,16 @@ class ArtikelController extends Controller
         $artikel = Artikel::findorfail($id);
         $artikel->kategoris()->detach();
         $artikel->delete();
+    }
+
+    public function getByTag($id)
+    {
+        $tags = Kategori::all();
+        $articles = Artikel::tag($id)->latest()->get();
+        return view('information.index',[
+            'articles' => $articles,
+            'tags' => $tags,
+            'active' => $id
+        ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Artikel extends Model
@@ -15,5 +16,12 @@ class Artikel extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function scopeTag(Builder $builder, $id)
+    {
+        return $builder->whereHas('kategoris', function(Builder $query) use($id) {
+            $query->where('artikel_kategori.kategori_id', $id);
+        });
     }
 }
