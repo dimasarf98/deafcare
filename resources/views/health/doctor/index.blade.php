@@ -39,10 +39,10 @@
                                 </small>
                             </p>
                         </div>
-                        <div class="d-flex justify-content-start">
+                        <div class="">
                             {{-- <a href="" class="badge badge-success rounded-pill px-3 py-1 mr-2">Chat</a> --}}
-                            <a href="{{route('deafcare.kesehatan.user.jadwal.show', $dokter->id)}}" class="badge badge-danger rounded-pill px-3 py-1 mr-2">Jadwal</a>
-                            <a href="{{route('deafcare.kesehatan.admin.tenagaKesehatan.edit', $dokter->id)}}" class="badge badge-success rounded-pill px-3 py-1 mr-2">Edit</a>
+                            <a href="{{route('deafcare.kesehatan.user.jadwal.show', $dokter->id)}}" class="badge badge-danger rounded-pill px-3 py-1 mr-1">Jadwal</a>
+                            <a href="{{route('deafcare.kesehatan.admin.tenagaKesehatan.edit', $dokter->id)}}" class="badge badge-success rounded-pill px-3 py-1 mr-1">Edit</a>
                             <a href="#" class="badge badge-secondary rounded-pill px-3 py-1" data-toggle="modal" data-target="#modalHapusDokter-{{$dokter->id}}">Hapus</a>
                             <!-- Modal -->
                             <div class="modal fade" id="modalHapusDokter-{{$dokter->id}}" tabindex="-1" role="dialog" aria-labelledby="modalHapusDokter-{{$dokter->id}}Label" aria-hidden="true">
@@ -75,11 +75,9 @@
             @endforelse
         </div>
     </div>
-    <div  class="position-sticky ml-auto" style="right: 1rem; bottom: 1rem; width:72px; margin-top: -72px">
-        <a href="{{route('deafcare.kesehatan.admin.tenagaKesehatan.create')}}" class="shadow square bg-danger rounded-circle p-4 d-flex align-items-center justify-content-center">
-            <i class="fa fa-plus text-white fa-2x"></i>
-        </a>
-    </div>
+    <x-floating-add-button
+        :url="route('deafcare.kesehatan.admin.tenagaKesehatan.create')"
+    ></x-floating-add-button>
 
 </main>
 @endsection

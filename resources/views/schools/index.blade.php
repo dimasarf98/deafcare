@@ -37,12 +37,14 @@
                             <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
                                 <div>
                                     <p class="font-weight-bold mb-1 text-truncate" style="line-height:1rem">
-                                        {{$sekolah->nama}}
+                                        <a class="text-dark" href="{{route('deafcare.forum.user.sekolah.show', $sekolah->id)}}">
+                                            {{$sekolah->nama}}
+                                        </a>
                                     </p>
                                     <small class="mb-0">
                                         <div class="d-flex align-items-center">
                                             <i class="fas fa-map-marker-alt mr-3"></i>
-                                            <div>
+                                            <div class="text-truncate">
                                                 {{$sekolah->alamat}}
                                             </div>
                                         </div>
@@ -50,11 +52,37 @@
                                     <small class="mb-0">
                                         <div class="d-flex align-items-center">
                                             <i class="fas fa-phone-alt mr-3"></i>
-                                            <div>
+                                            <div class="text-truncate">
                                                 {{$sekolah->no_telp}}
                                             </div>
                                         </div>
                                     </small>
+                                    <div class="mt-2">
+                                        <a href="{{route('deafcare.forum.admin.sekolah.edit', $sekolah->id)}}" class="badge badge-success rounded-pill px-3 py-1 mr-1">Edit</a>
+                                        <a href="#" class="badge badge-secondary rounded-pill px-3 py-1" data-toggle="modal" data-target="#modalHapusKomunitas-{{$sekolah->id}}">Hapus</a>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="modalHapusKomunitas-{{$sekolah->id}}" tabindex="-1" role="dialog" aria-labelledby="modalHapusKomunitas-{{$sekolah->id}}Label" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalHapusKomunitas-{{$sekolah->id}}Label">Apakah anda yakin?</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Data sekolah yang dipilih akan terhapus!
+                                                    </div>
+                                                    <form method="POST" action="{{route('deafcare.forum.admin.sekolah.destroy', $sekolah->id)}}" class="modal-footer">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -62,5 +90,8 @@
                 @endforeach
             </div>
         </div>
+        <x-floating-add-button
+            :url="route('deafcare.forum.admin.sekolah.create')"
+        ></x-floating-add-button>
     </main>
 @endsection
