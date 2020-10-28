@@ -18,7 +18,7 @@ class SekolahController extends Controller
 
     public function create()
     {
-        //
+        return view('schools.create');
     }
 
     public function store()
@@ -26,16 +26,21 @@ class SekolahController extends Controller
         $response = TransformerSekolah::make();
         $sekolah = Sekolah::create($response->sekolah);
         Sekolah::findorfail($sekolah->id)->profilSekolah()->create($response->profil);
+
+        return redirect(route('deafcare.forum.user.sekolah.index'));
     }
 
     public function show($id)
     {
-        //
+        $sekolah = Sekolah::findOrFail($id);
+
+        return view('schools.show', compact('sekolah'));
     }
 
     public function edit($id)
     {
-        //
+        $sekolah = Sekolah::findOrFail($id);
+        return view('schools.edit', compact('sekolah'));
     }
 
     public function update($id)
@@ -44,11 +49,15 @@ class SekolahController extends Controller
         $response = TransformerSekolah::make();
 
         $sekolah->update($response->sekolah);
-        $sekolah->profilSekolah()->update($response->sekolah);
+        $sekolah->profilSekolah()->update($response->profil);
+
+        return redirect(route('deafcare.forum.user.sekolah.index'));
     }
 
     public function destroy($id)
     {
         Sekolah::findorfail($id)->delete();
+
+        return redirect(route('deafcare.forum.user.sekolah.index'));
     }
 }

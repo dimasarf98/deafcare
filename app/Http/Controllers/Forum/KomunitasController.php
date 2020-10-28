@@ -18,6 +18,7 @@ class KomunitasController extends Controller
 
     public function create()
     {
+        return view('forum.create');
     }
 
     public function profil($id)
@@ -35,16 +36,20 @@ class KomunitasController extends Controller
         $response = TransformerForum::make();
         $forum = Forum::create($response->forum);
         Forum::findorfail($forum->id)->profilForum()->create($response->profil);
+
+        return redirect(route('deafcare.forum.user.komunitas.index'));
     }
 
     public function show($id)
     {
-        //
+        $forum = Forum::findOrFail($id);
+        return view('forum.show', compact('forum'));
     }
 
     public function edit($id)
     {
-        //
+        $komunitas = Forum::findOrFail($id);
+        return view('forum.edit', compact('komunitas'));
     }
 
     public function update($id)
@@ -53,10 +58,16 @@ class KomunitasController extends Controller
         $forum = Forum::findorfail($id);
         $forum->update($response->forum);
         $forum->profilForum()->update($response->profil);
+
+        return redirect(route('deafcare.forum.user.komunitas.index'));
     }
 
     public function destroy($id)
     {
-        //
+        $forum = Forum::findorfail($id);
+        $forum->profilForum()->delete();
+        $forum->kegiatanForum()->delete();
+        $forum->delete();
+        return redirect(route('deafcare.forum.user.komunitas.index'));
     }
 }
