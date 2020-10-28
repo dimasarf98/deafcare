@@ -150,7 +150,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
         Route::prefix('user')->name('user.')->group(function()
         {
             Route::resource('jenis', 'JenisPendengaranController',[
-                'only' => ['index']
+                'only' => ['index', 'show']
             ]);
             Route::resource('hearingcenter', 'HearingCenterController', [
                 'only' => ['index','show']

@@ -2,6 +2,7 @@
 
 use App\HearingCenter;
 use App\JenisKesehatan;
+use App\JenisTesPendengaran;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             JenisKesehatanSeeder::class,
+            JenisTesPendengaranSeeder::class,
             TenagaKesehatanSeeder::class,
             RumahSakitSeeder::class,
             JadwalTenagaKesehatanSeeder::class,
@@ -23,7 +25,8 @@ class DatabaseSeeder extends Seeder
             RumahSakitPendengaranSeeder::class,
             RoleSeeder::class,
             KomunitasSeeder::class,
-            SekolahSeeder::class
+            SekolahSeeder::class,
+            JenisTesPendengaranTesPendengaranSeeder::class
         ]);
     }
 }

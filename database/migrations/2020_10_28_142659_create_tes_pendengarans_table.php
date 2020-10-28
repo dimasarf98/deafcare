@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHearingCentersTable extends Migration
+class CreateTesPendengaransTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateHearingCentersTable extends Migration
      */
     public function up()
     {
-        Schema::create('hearing_centers', function (Blueprint $table) {
+        Schema::create('tes_pendengarans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->longText('gambar');
             $table->longText('alamat');
             $table->string('no_telp');
             $table->timestamps();
@@ -29,6 +30,6 @@ class CreateHearingCentersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hearing_centers');
+        Schema::dropIfExists('tes_pendengarans');
     }
 }

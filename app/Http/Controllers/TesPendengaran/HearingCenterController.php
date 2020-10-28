@@ -4,6 +4,7 @@ namespace App\Http\Controllers\TesPendengaran;
 
 use App\HearingCenter;
 use App\JadwalHearingCenter;
+use App\TesPendengaran as AppTesPendengaran;
 use App\Transformer\TesPendengaran;
 use Illuminate\Http\Request;
 
@@ -11,8 +12,10 @@ class HearingCenterController extends Controller
 {
     public function index()
     {
-        $hearingCenters = HearingCenter::all();
-        return view('hearingtest.show');
+        $hearingCenters = AppTesPendengaran::all();
+        return view('hearingtest.show',[
+            'hearingCenters' => $hearingCenters
+        ]);
     }
 
     public function create()

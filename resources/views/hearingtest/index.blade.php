@@ -18,34 +18,22 @@
         </div>
     </div>
     <div class="row d-flex flex-column align-items-center">
-        <div class="col-7">
-            <a class='card rounded-xl link-style-none mb-3' href="{{route('deafcare.tespendengaran.user.hearingcenter.index')}}">
-                <div class="card-body d-flex flex-column align-items-center">
-                    <img class="rounded mb-3" src="{{asset('img/dummy.jpg')}}" alt="..." style="width: 120px; height:120px; object-fit:cover">
-                    <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
-                        <div>
-                            <h4 class="font-weight-bold mb-1 text-center">
-                                Hearing Center
-                            </h4>
+        @foreach ($jenis as $item)
+            <div class="col-7">
+                <a class='card rounded-xl link-style-none mb-3' href="{{route('deafcare.tespendengaran.user.jenis.show', $item->id)}}">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <img class="rounded mb-3" src="{{$item->gambar}}" alt="..." style="width: 120px; height:120px; object-fit:cover">
+                        <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
+                            <div>
+                                <h4 class="font-weight-bold mb-1 text-center">
+                                    {{$item->nama}}
+                                </h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-7">
-            <a class='card rounded-xl link-style-none mb-3' href="#">
-                <div class="card-body d-flex flex-column align-items-center">
-                    <img class="rounded mb-3" src="{{asset('img/dummy.jpg')}}" alt="..." style="width: 120px; height:120px; object-fit:cover">
-                    <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
-                        <div>
-                            <h4 class="font-weight-bold mb-1 text-center">
-                                Rumah Sakit
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        @endforeach
     </div>
 </main>
 @endsection

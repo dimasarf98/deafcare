@@ -30,7 +30,7 @@
             @forelse ($hearingCenters as $hearingCenter)
                 <div class = 'card rounded-xl link-style-none mb-3'>
                     <div class="card-body d-flex">
-                        <img class="rounded mr-3" src="{{asset('img/dummy.jpg')}}" alt="..." style="width: 90px; height:120px; object-fit:cover">
+                        <img class="rounded mr-3" src="{{$hearingCenter->gambar}}" alt="..." style="width: 90px; height:120px; object-fit:cover">
                         <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
                             <div>
                                 <p class="font-weight-bold mb-1 text-truncate" style="line-height:1rem">
