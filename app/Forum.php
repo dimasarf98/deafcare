@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Forum extends Model
 {
-    protected $fillable = ['nama', 'alamat','no_telp'];
+    protected $fillable = ['nama', 'alamat','no_telp','gambar'];
     public function profilForum()
     {
         return $this->hasOne('App\ProfilForum');

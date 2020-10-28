@@ -18,6 +18,7 @@ class SekolahSeeder extends Seeder
                 'nama' => 'Elementary School Giwangan Yogyakarta',
                 'alamat' => 'Jl. Tegalturi No.45, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163',
                 'no_telp' => '(0274) 378421',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603863348/Sekolah/school_bpzlqb.png'
             ]
         )->id;
         Sekolah::findorfail($id1)->profilSekolah()->create(
@@ -35,6 +36,7 @@ class SekolahSeeder extends Seeder
                 'nama' => 'TPA/KB/TK/INKLUSI ISLAM PELANGI ANAK NEGERI YOGYAKARTA',
                 'alamat' => 'Jl. Sorosutan No.25b, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162',
                 'no_telp' => 'Telp. 0274 - 381439 HP. 082119649888 - 0817466182',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603863560/Sekolah/20151021105654_zddq20.jpg'
             ]
         )->id;
         Sekolah::findorfail($id2)->profilSekolah()->create(
@@ -59,6 +61,7 @@ class SekolahSeeder extends Seeder
                 'nama' => 'PAUD Inklusi Bina Kasih Nusantara',
                 'alamat' => 'Jl. Langenarjan Lor No.23, Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55131',
                 'no_telp' => 'Telephone: (0274) 378 544 Email: tumbanglgjppptka@ymail.com',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603863638/Sekolah/Bina-Kasih-Nusantara-1_ee89ii.png'
             ]
         )->id;
         Sekolah::findorfail($id3)->profilSekolah()->create(
@@ -75,6 +78,7 @@ class SekolahSeeder extends Seeder
                 'nama' => 'Little Tree Yogyakarta',
                 'alamat' => 'Jl. Mantrigawenkidul No.8, Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55131',
                 'no_telp' => 'Telp: (0274) 378881',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603863772/Sekolah/1397288419_vquvzf.png'
             ]
         )->id;
         Sekolah::findorfail($id4)->profilSekolah()->create(

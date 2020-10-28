@@ -17,6 +17,7 @@ class CreateRumahSakitsTable extends Migration
             $table->id();
             $table->string('nama');
             $table->longText('alamat');
+            $table->longText('gambar')->nullable();
             $table->timestamps();
         });
     }

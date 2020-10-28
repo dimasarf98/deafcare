@@ -18,6 +18,7 @@ class CreateTenagaKesehatansTable extends Migration
             $table->foreignId('jenis_kesehatan_id');
             $table->string('nama');
             $table->string('pengalaman');
+            $table->longText('gambar')->nullable();
             $table->timestamps();
         });
     }

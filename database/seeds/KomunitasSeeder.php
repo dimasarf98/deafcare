@@ -18,6 +18,7 @@ class KomunitasSeeder extends Seeder
                 'nama' => 'Dunia Tak Lagi Sunyi',
                 'alamat' => 'Yogyakarta',
                 'no_telp' => 'FB : Dunia tak lagi sunyi',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603862303/Komunitas/Screen-Shot-2020-04-07-at-12.44.58-930x620_lmv3mk.png'
             ]
         )->id;
         Forum::findorfail($id1)->kegiatanForum()->createMany(
@@ -44,6 +45,7 @@ class KomunitasSeeder extends Seeder
                 'nama' => 'Komunitas Deaf Family Solo Raya',
                 'alamat' => 'Mojosongo, Kec. Jebres, Kota Surakarta, Jawa Tengah 57127',
                 'no_telp' => '6285385430377',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603862388/Komunitas/sharing_njs3uu.png'
             ]
         )->id;
         Forum::findorfail($id2)->profilForum()->create(
@@ -59,6 +61,7 @@ class KomunitasSeeder extends Seeder
                 'nama' => 'SOFT',
                 'alamat' => 'Semarang',
                 'no_telp' => 'FB : SOFT',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603862388/Komunitas/sharing_njs3uu.png'
             ]
         )->id;
         Forum::findorfail($id3)->profilForum()->create(
@@ -74,6 +77,7 @@ class KomunitasSeeder extends Seeder
                 'nama' => 'Komunitas Pecahkan Kesunyian',
                 'alamat' => 'Yogyakarta',
                 'no_telp' => 'FB : pecahkan kesunyian',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603862583/Komunitas/image_p0vuld.png'
             ]
         )->id;
         Forum::findorfail($id4)->profilForum()->create(
@@ -89,6 +93,7 @@ class KomunitasSeeder extends Seeder
                 'nama' => 'Magelang Deaf Community (MDC)',
                 'alamat' => 'Magelang',
                 'no_telp' => 'FB : Magelang Deaf Community (MDC)',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603862699/Komunitas/images_soqro0.jpg'
             ]
         )->id;
         Forum::findorfail($id5)->profilForum()->create(
@@ -113,6 +118,7 @@ class KomunitasSeeder extends Seeder
                 'nama' => 'Deaf Art Community Yogyakarta (DAC)',
                 'alamat' => 'Yogyakarta',
                 'no_telp' => 'FB : Deaf Art Community Yogyakarta (DAC)',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603862793/Komunitas/7lCDsKOw_400x400_gn8nmd.jpg'
             ]
         )->id;
         Forum::findorfail($id6)->profilForum()->create(
@@ -137,6 +143,7 @@ class KomunitasSeeder extends Seeder
                 'nama' => 'Deaf Volunteering Organization (DVO) Solo',
                 'alamat' => 'Solo',
                 'no_telp' => 'IG : dvosolo',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603863000/Komunitas/Dvo_jc85ga.jpg'
             ]
         )->id;
         Forum::findorfail($id7)->profilForum()->create(

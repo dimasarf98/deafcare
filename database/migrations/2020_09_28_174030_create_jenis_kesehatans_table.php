@@ -17,6 +17,7 @@ class CreateJenisKesehatansTable extends Migration
             $table->id();
             $table->string('judul');
             $table->string('deskripsi');
+            $table->longText('gambar')->nullable();
             $table->timestamps();
         });
     }

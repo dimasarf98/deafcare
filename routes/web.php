@@ -47,8 +47,8 @@ Route::get('/tespendengaran/show', function() {
     return view('hearingtest.show');
 })->name('tespendengaran.show');
 
-Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
-// Route::prefix('deafcare')->name('deafcare.')->group(function ()
+// Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
+Route::prefix('deafcare')->name('deafcare.')->group(function ()
 {
     Route::get('home', 'HomeController@index')->name('home');
     Route::namespace('Kesehatan')->prefix('kesehatan')->name('kesehatan.')->group(function()
@@ -72,7 +72,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
                 'only' => ['create','store', 'edit','update']
             ]);
             Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
-                'only' => ['create','store', 'edit','update', 'destroy']
+                'only' => ['create','store', 'edit','update','destroy']
             ]);
             Route::resource('jadwal', 'JadwalTenagaKesehatanController', [
                 'only' => ['create','store', 'edit','update']
@@ -112,10 +112,10 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
         Route::prefix('admin')->name('admin.')->group(function()
         {
             Route::resource('komunitas', 'KomunitasController', [
-                'only' => ['create','store', 'edit','update']
+                'only' => ['create','store', 'edit','update','destroy']
             ]);
             Route::resource('sekolah', 'SekolahController', [
-                'only' => ['create','store', 'edit','update']
+                'only' => ['create','store', 'edit','update','destroy']
             ]);
         });
     });
@@ -123,6 +123,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
     Route::namespace('Informasi')->prefix('informasi')->name('informasi.')->group(function()
     {
         Route::resource('artikel', 'ArtikelController');
+        Route::get('artikel/getbytag/{tag}','ArtikelController@getByTag')->name('artikel.getbytag');
     });
 
     Route::namespace('Belanja')->prefix('belanja')->name('belanja.')->group(function()

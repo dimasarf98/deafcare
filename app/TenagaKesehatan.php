@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TenagaKesehatan extends Model
 {
-    protected $fillable = ['jenis_kesehatan_id', 'nama','pengalaman'];
+    protected $fillable = ['jenis_kesehatan_id', 'nama','pengalaman','gambar'];
 
     public function rumahSakits()
     {

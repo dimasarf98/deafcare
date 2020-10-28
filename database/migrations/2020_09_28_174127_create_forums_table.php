@@ -18,6 +18,7 @@ class CreateForumsTable extends Migration
             $table->string('nama');
             $table->longText('alamat');
             $table->string('no_telp');
+            $table->longText('gambar')->nullable();
             $table->timestamps();
         });
     }

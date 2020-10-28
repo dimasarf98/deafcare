@@ -22,7 +22,7 @@
             @forelse ($jenisKesehatan as $jenis)
             <x-health-item
                 :url="route('deafcare.kesehatan.user.tenagaKesehatan.show', $jenis->id)"
-                :imgSrc="asset('img/dummy.jpg')"
+                :imgSrc="$jenis->gambar"
                 :title="$jenis->judul"
                 :description="$jenis->deskripsi"
                 class="mb-3"
