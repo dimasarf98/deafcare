@@ -25,6 +25,12 @@ class RoleSeeder extends Seeder
                     'role' => 'Tenaga Medis'
                 ],
                 [
+                    'role' => 'Forum'
+                ],
+                [
+                    'role' => 'Sekolah'
+                ],
+                [
                     'role' => 'Vendor Penjual'
                 ],
                 [

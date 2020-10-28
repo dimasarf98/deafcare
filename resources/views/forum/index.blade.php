@@ -58,8 +58,10 @@
                                         </div>
                                     </small>
                                     <div class="mt-2">
-                                        <a href="{{route('deafcare.forum.admin.komunitas.edit', $forum->id)}}" class="badge badge-success rounded-pill px-3 py-1 mr-1">Edit</a>
-                                        <a href="#" class="badge badge-secondary rounded-pill px-3 py-1" data-toggle="modal" data-target="#modalHapusKomunitas-{{$forum->id}}">Hapus</a>
+                                        @if (Auth()->user()->roles()->admin() || Auth()->user()->roles()->forum())
+                                            <a href="{{route('deafcare.forum.admin.komunitas.edit', $forum->id)}}" class="badge badge-success rounded-pill px-3 py-1 mr-1">Edit</a>
+                                            <a href="#" class="badge badge-secondary rounded-pill px-3 py-1" data-toggle="modal" data-target="#modalHapusKomunitas-{{$forum->id}}">Hapus</a>
+                                        @endif
                                         <!-- Modal -->
                                         <div class="modal fade" id="modalHapusKomunitas-{{$forum->id}}" tabindex="-1" role="dialog" aria-labelledby="modalHapusKomunitas-{{$forum->id}}Label" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -90,8 +92,11 @@
                 @endforeach
             </div>
         </div>
-        <x-floating-add-button
-            :url="route('deafcare.forum.admin.komunitas.create')"
-        ></x-floating-add-button>
+        @if (Auth()->user()->roles()->admin()))
+            <x-floating-add-button
+                :url="route('deafcare.forum.admin.komunitas.create')"
+            ></x-floating-add-button>
+            
+        @endif
     </main>
 @endsection
