@@ -11,11 +11,12 @@ class Forum
         $reponse->forum = [
             'nama' => request()->nama,
             'alamat' => request()->alamat,
-            'no_telp' => request()->no_telp
+            'no_telp' => request()->no_telp,
+            'gambar' => uploadImage()
         ];
         $reponse->profil=[
             'deskripsi' => request()->deskripsi,
-            'gambar' => request()->gambar
+            'gambar' => ''
         ];
         return $reponse;
     }
