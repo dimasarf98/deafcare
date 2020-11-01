@@ -11,6 +11,13 @@
             @method('PUT')
             @csrf
             <div class="col-12">
+                <div class="mb-3 mx-auto position-relative w-100" style="height: 200px">
+                    <img class="rounded-lg border h-100 w-100" src="{{$tenagaKesehatan->gambar}}" alt="Foto {{$tenagaKesehatan->nama}}" style="object-fit: cover">
+                    <button data-toggle="modal" data-target="#modalChangeProfile" type="button" class="btn btn-success btn-sm position-absolute" style="right: 0.5rem; bottom: 0.5rem">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+                <input type="hidden" name="gambar_old" value="{{$tenagaKesehatan->gambar}}">
                 <x-inputs.select
                     label="Jenis Kesehatan"
                     name="jenis_kesehatan_id"
