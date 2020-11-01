@@ -92,7 +92,7 @@
                 @endforeach
             </div>
         </div>
-        @if (Auth()->user()->roles()->admin()))
+        @if (Auth()->user()->roles()->admin())
             <x-floating-add-button
                 :url="route('deafcare.forum.admin.sekolah.create')"
             ></x-floating-add-button>

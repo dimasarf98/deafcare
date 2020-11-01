@@ -5,7 +5,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="rumahsakit">Rumah Sakit</label>
-                    <select v-model="jadwal.rumahSakit" class="form-control" name="rumahsakit[]" id="rumahsakit">
+                    <select v-model="jadwal.rumahSakit" class="form-control selectpicker" data-live-search="true" name="rumahsakit[]" id="rumahsakit">
                         <option value="" disabled selected>Pilih rumah sakit</option>
                         <option v-for="rumahsakit in rumahSakits" :value="rumahsakit.id">{{rumahsakit.nama}}</option>
                     </select>

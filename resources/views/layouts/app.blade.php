@@ -12,6 +12,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
+
+    <!-- TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/igyxwxutzv0bw4poaambjtq4e1dvx03yupgu3fxxsnid2165/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
     <div id="app" class="container-phone mx-auto" style="background-color: #fff; min-height:100vh">

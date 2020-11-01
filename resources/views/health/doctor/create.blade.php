@@ -17,6 +17,7 @@
                     :option-values="$jenis->map(fn($j)=>$j->id)"
                     :option-names="$jenis->map(fn($j)=>$j->judul)"
                     required
+                    search
                 ></x-inputs.select>
                 <x-inputs.input
                     label="Nama Tenaga Kesehatan"

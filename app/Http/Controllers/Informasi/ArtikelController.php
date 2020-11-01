@@ -24,6 +24,8 @@ class ArtikelController extends Controller
     public function create()
     {
         $tags = Kategori::all();
+
+        return view('information.create', compact('tags'));
     }
 
     public function store()
@@ -32,16 +34,23 @@ class ArtikelController extends Controller
         $responseTags = TransformerArtikel::tags();
         $artikel = Artikel::create($responseArtikel);
         $artikel->kategoris()->attach($responseTags);
+
+        return redirect(route('deafcare.informasi.artikel.index'));
     }
 
     public function show($id)
     {
-        //
+        $artikel = Artikel::findOrFail($id);
+
+        return view('information.show', compact('artikel'));
     }
 
     public function edit($id)
     {
-        //
+        $artikel = Artikel::findOrFail($id);
+        $tags = Kategori::all();
+
+        return view('information.edit', compact('artikel', 'tags'));
     }
 
     public function update($id)
@@ -52,6 +61,8 @@ class ArtikelController extends Controller
         $artikel->update($responseArtikel);
         $artikel->kategoris()->detach();
         $artikel->kategoris()->attach($responseTags);
+
+        return redirect(route('deafcare.informasi.artikel.index'));
     }
 
     public function destroy($id)
@@ -59,6 +70,8 @@ class ArtikelController extends Controller
         $artikel = Artikel::findorfail($id);
         $artikel->kategoris()->detach();
         $artikel->delete();
+
+        return redirect(route('deafcare.informasi.artikel.index'));
     }
 
     public function getByTag($id)

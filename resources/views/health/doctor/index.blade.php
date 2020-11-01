@@ -44,9 +44,9 @@
                             <a href="{{route('deafcare.kesehatan.user.jadwal.show', $dokter->id)}}" class="badge badge-danger rounded-pill px-3 py-1 mr-1">Jadwal</a>
                             @if (Auth()->user()->roles()->admin() || Auth()->user()->roles()->tenagaMedis())
                                 <a href="{{route('deafcare.kesehatan.admin.tenagaKesehatan.edit', $dokter->id)}}" class="badge badge-success rounded-pill px-3 py-1 mr-1">Edit</a>
-                                <a href="#" class="badge badge-secondary rounded-pill px-3 py-1" data-toggle="modal" data-target="#modalHapusDokter-{{$dokter->id}}">Hapus</a>      
+                                <a href="#" class="badge badge-secondary rounded-pill px-3 py-1" data-toggle="modal" data-target="#modalHapusDokter-{{$dokter->id}}">Hapus</a>
                             @endif
-                            
+
                             <!-- Modal -->
                             <div class="modal fade" id="modalHapusDokter-{{$dokter->id}}" tabindex="-1" role="dialog" aria-labelledby="modalHapusDokter-{{$dokter->id}}Label" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -78,8 +78,7 @@
             @endforelse
         </div>
     </div>
-    @if (Auth()->user()->roles()->admin()))
-        
+    @if (Auth()->user()->roles()->admin())
         <x-floating-add-button
             :url="route('deafcare.kesehatan.admin.tenagaKesehatan.create')"
         ></x-floating-add-button>

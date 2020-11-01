@@ -17,7 +17,7 @@
         <label class="font-weight-bold" for="{{ $id }}">{{ $label }} @if($required) <span class="text-danger">*</span> @endif</label>
     @endif
     <select {{ $attributes->merge([
-        'class' => ($class ?? ' ').' form-control '. ($errors->has($name) ? ' is-invalid' : ''),
+        'class' => ($class ?? ' ').' form-control selectpicker '. ($errors->has($name) ? ' is-invalid' : ''),
         'name' => ($multiple ? $name.'[]' : $name),
         'id' => $id,
     ]) }} title="{{$placeholder ?? null}}"

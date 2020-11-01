@@ -6,7 +6,8 @@
 'rows' => 3,
 'value' => null,
 'required' => false,
-'placeholder' => null
+'placeholder' => null,
+'tinyMce' => false,
 ])
 
 <div class="form-group">
@@ -14,7 +15,7 @@
         <label class="font-weight-bold" for="{{ $id }}">{{ $label }} @if($required) <span class="text-danger">*</span> @endif</label>
     @endif
     <textarea {{ $attributes->merge([
-        'class' => ($class ?? ' ').' form-control'.($errors->has($name) ? ' is-invalid' : ''),
+        'class' => ($class ?? ' ').' form-control'.($errors->has($name) ? ' is-invalid' : ' ').($tinyMce ? ' tiny-mce' : ' '),
         'name' => $name,
         'id' => $id,
         'rows' => $rows,
