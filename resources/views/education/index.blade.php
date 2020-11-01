@@ -2,13 +2,15 @@
 
 @section('content')
     <header class="sticky-top">
-        <x-title-bar title="Informasi" :back-url="route('deafcare.home')" />
+        <x-title-bar
+            title="Video Edukasi"
+            :back-url="route('deafcare.home')"></x-title-bar>
     </header>
     <main class="px-3 pt-3" style="padding-bottom: 64px">
         <div class="row mb-3">
             <div class="col-12">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari Informasi" aria-label="Cari Informasi"
+                    <input type="text" class="form-control" placeholder="Cari Video" aria-label="Cari Informasi"
                         aria-describedby="btn-search">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="btn-search">
@@ -68,13 +70,13 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
-        @if (Auth()->user()->roles()->admin()))
+        @if (Auth()->user()->roles()->admin())
             <x-floating-add-button
                 :url="route('deafcare.edukasi.admin.video.create')"
             ></x-floating-add-button>
