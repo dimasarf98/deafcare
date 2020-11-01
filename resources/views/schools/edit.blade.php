@@ -7,7 +7,7 @@
             :back-url="route('deafcare.forum.user.sekolah.index')"></x-title-bar>
     </header>
     <main class="px-3 pt-3">
-        <form method="POST" action="{{route('deafcare.forum.admin.sekolah.update', $sekolah->id)}}" class="row">
+        <form method="POST" action="{{route('deafcare.forum.admin.sekolah.update', $sekolah->id)}}" class="row" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="col-12">
@@ -17,6 +17,7 @@
                         <i class="fas fa-edit"></i>
                     </button>
                 </div>
+                <input type="hidden" name="gambar_old" value="{{$sekolah->gambar}}">
                 <x-inputs.input
                     label="Nama Sekolah"
                     name="nama"
@@ -48,7 +49,7 @@
                     label="Website Sekolah"
                     name="website"
                     required
-                    value="{{$sekolah->website}}"
+                    value="{{$sekolah->profilSekolah->website}}"
                     placeholder="cth: www.sdn01yogyakarta.com"
                 ></x-inputs.input>
                 <button type="submit" class="btn btn-success btn-block mb-3">

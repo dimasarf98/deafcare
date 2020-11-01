@@ -17,7 +17,12 @@ class CreateVideosTable extends Migration
             $table->id();
             $table->string('judul');
             $table->string('uploader');
-            $table->longText('video');
+            $table->longText('deskripsi');
+            $table->longText('thumbnail');
+            $table->longText('player');
+            $table->longText('durasi');
+            $table->longText('viewCount');
+            $table->longText('link');
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@
             :back-url="route('deafcare.forum.user.komunitas.index')"></x-title-bar>
     </header>
     <main class="px-3 pt-3">
-        <form method="POST" action="{{route('deafcare.forum.admin.komunitas.update', $komunitas->id)}}" class="row">
+        <form method="POST" action="{{route('deafcare.forum.admin.komunitas.update', $komunitas->id)}}" class="row" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="col-12">
@@ -17,6 +17,7 @@
                         <i class="fas fa-edit"></i>
                     </button>
                 </div>
+                <input type="hidden" name="gambar_old" value="{{$komunitas->gambar}}">
                 <x-inputs.input
                     label="Nama Komunitas"
                     name="nama"

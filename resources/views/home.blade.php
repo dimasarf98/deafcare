@@ -12,7 +12,7 @@
             <x-card-module
                 icon-class="fab fa-youtube"
                 title="Edukasi"
-                url="#"
+                :url="route('deafcare.edukasi.video.index')"
             />
         </div>
         <div class="col-6 mb-4">

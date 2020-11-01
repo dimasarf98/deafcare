@@ -48,9 +48,19 @@ Route::get('/tespendengaran/show', function() {
 })->name('tespendengaran.show');
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
-// Route::prefix('deafcare')->name('deafcare.')->group(function ()
 {
     Route::get('home', 'HomeController@index')->name('home');
+    Route::namespace('Edukasi')->prefix('edukasi')->name('edukasi.')->group(function()
+    {
+        Route::resource('video', 'VideoController', [
+            'only' => ['index','show']
+        ]);
+
+        Route::prefix('admin')->name('admin.')->group(function()
+        {
+            Route::resource('video', 'VideoController');
+        });
+    });
     Route::namespace('Kesehatan')->prefix('kesehatan')->name('kesehatan.')->group(function()
     {
         Route::prefix('user')->name('user.')->group(function()

@@ -7,7 +7,7 @@
             :back-url="route('deafcare.kesehatan.user.jenis.index')"></x-title-bar>
     </header>
     <main class="px-3 pt-3">
-        <form method="POST" action="{{route('deafcare.kesehatan.admin.tenagaKesehatan.store')}}" class="row">
+        <form method="POST" action="{{route('deafcare.kesehatan.admin.tenagaKesehatan.store')}}" class="row" enctype="multipart/form-data">
             @csrf
             <div class="col-12">
                 <x-inputs.select
@@ -30,6 +30,10 @@
                     type="text"
                     placeholder="cth: 2 tahun"
                 ></x-inputs.input>
+                <x-inputs.file-input
+                    label="Foto Tenaga Medis"
+                    name="gambar"
+                ></x-inputs.file-input>
                 <hr>
                 <schedule-list
                     :rumah-sakits="{{$rumahSakits}}"

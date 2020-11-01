@@ -7,7 +7,7 @@
             :back-url="route('deafcare.forum.user.sekolah.index')"></x-title-bar>
     </header>
     <main class="px-3 pt-3">
-        <form method="POST" action="{{route('deafcare.forum.admin.sekolah.store')}}" class="row">
+        <form method="POST" action="{{route('deafcare.forum.admin.sekolah.store')}}" class="row" enctype="multipart/form-data">
             @csrf
             <div class="col-12">
                 <x-inputs.input
