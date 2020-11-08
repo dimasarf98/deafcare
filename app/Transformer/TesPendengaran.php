@@ -10,6 +10,7 @@ class TesPendengaran
             'nama' => request()->nama,
             'alamat' => request()->alamat,
             'no_telp' => request()->no_telp,
+            'gambar' => 'Dummy',
         ];
         return $response;
     }
@@ -21,10 +22,9 @@ class TesPendengaran
             $response[] = [
                 'jam' => request()->jam[$i],
                 'hari' => request()->hari[$i],
-                'jadwal' => request()->jadwal[$i]
             ];
         }
-        
+
         return $response;
     }
 
@@ -39,7 +39,7 @@ class TesPendengaran
                 'biaya' => request()->biaya[$i],
             ];
         }
-        
+
         return $response;
     }
 }

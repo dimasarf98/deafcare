@@ -160,25 +160,17 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
         Route::prefix('user')->name('user.')->group(function()
         {
             Route::resource('jenis', 'JenisPendengaranController',[
-                'only' => ['index', 'show']
+                'only' => ['index']
             ]);
-            Route::resource('hearingcenter', 'HearingCenterController', [
-                'only' => ['index','show']
-            ]);
-
-            Route::resource('rumahsakit', 'RumahSakitController', [
-                'only' => ['index','show']
+            Route::resource('jenis.hearingcenter', 'HearingCenterController',[
+                'only' => ['index']
             ]);
         });
 
         Route::prefix('admin')->name('admin.')->group(function()
         {
-            Route::resource('hearingcenter', 'HearingCenterController', [
-                'only' => ['index','show','create','store', 'edit','update','destroy']
-            ]);
-
-            Route::resource('rumahsakit', 'RumahSakitController', [
-                'only' => ['index','show','create','store', 'edit','update','destroy']
+            Route::resource('jenis.hearingcenter', 'HearingCenterController',[
+                'only' => ['create', 'store', 'edit', 'update', 'destroy']
             ]);
         });
     });

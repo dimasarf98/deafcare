@@ -4,43 +4,61 @@ namespace App\Http\Controllers\TesPendengaran;
 
 use App\HearingCenter;
 use App\JadwalHearingCenter;
-use App\TesPendengaran as AppTesPendengaran;
+use App\JadwalTesPendengaran;
+use App\JenisTesPendengaran;
+use App\TesPendengaran as TesPendengaranModel;
 use App\Transformer\TesPendengaran;
 use Illuminate\Http\Request;
 
 class HearingCenterController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $hearingCenters = AppTesPendengaran::all();
-        return view('hearingtest.show',[
-            'hearingCenters' => $hearingCenters
+        $jenis = JenisTesPendengaran::findOrFail($id);
+        $hearingCenters = $jenis->tesPendengarans;
+        return view('hearingtest.testlocations.index',[
+            'hearingCenters' => $hearingCenters,
+            'jenis' => $jenis
         ]);
     }
 
-    public function create()
+    public function create($idJenis)
     {
-        //
+        $jenis = JenisTesPendengaran::findOrFail($idJenis);
+        $jenises = JenisTesPendengaran::all();
+        return view('hearingtest.testlocations.create', compact('jenis', 'jenises'));
     }
 
-    public function store()
+    public function store($idJenis)
     {
         $responseHearingCenter = TesPendengaran::makeInstitusi();
         $responseJadwal = TesPendengaran::makeJadwals();
 
-        $hearingCenter = HearingCenter::create($responseHearingCenter);
-        HearingCenter::findorfail($hearingCenter->id)->jadwals()->createMany($responseJadwal);
+        $hearingCenter = TesPendengaranModel::create($responseHearingCenter);
+        TesPendengaranModel::findorfail($hearingCenter->id)->jadwals()->createMany($responseJadwal);
+
+        return redirect(route('deafcare.tespendengaran.user.jenis.hearingcenter.index', $idJenis));
     }
 
-    public function show($id)
+    public function show($idJenis, $idTesPendengaran)
     {
-        $jadwals = HearingCenter::findorfail($id)->jadwals;
+//        $jenis = JenisTesPendengaran::findOrFail($idJenis);
+//        $hearingCenter = TesPendengaranModel::findOrFail($idTesPendengaran);
+//        $jadwals = $hearingCenter->jadwals;
+//        return view('hearingtest.testlocations.show', [
+//            'jenis' => $jenis,
+//            'hearingCenter' => $hearingCenter,
+//            'jadwals' => $jadwals
+//        ]);
     }
 
-    public function edit($id)
+    public function edit($idJenis, $idTes)
     {
-        $hearingCenter = HearingCenter::findorfail($id);
-        $jadwals = $hearingCenter->jadwals;
+        $jenis = JenisTesPendengaran::findOrFail($idJenis);
+        $jenises = JenisTesPendengaran::all();
+        $hearingCenter = TesPendengaranModel::findorfail($idTes);
+
+        return view('hearingtest.testlocations.edit', compact('jenis', 'jenises', 'hearingCenter'));
     }
 
     public function update($id)
@@ -49,15 +67,17 @@ class HearingCenterController extends Controller
         $responseJadwal = TesPendengaran::makeJadwals();
 
         HearingCenter::findorfail($id)->update($responseHearingCenter);
-        
+
         for($i = 0; $i < count(request()->id_jadwal); $i++){
             JadwalHearingCenter::findorfail(request()->id_jadwal[$i])->update($responseJadwal[$i]);
         }
     }
 
-    public function destroy($id)
+    public function destroy($idJenis, $idTes)
     {
-        JadwalHearingCenter::where('hearing_center_id', $id)->delete();
-        HearingCenter::findorfail($id)->delete();
+        $hearingCenter = TesPendengaranModel::findOrFail($idTes);
+        $hearingCenter->delete();
+
+        return redirect(route('deafcare.tespendengaran.user.jenis.hearingcenter.index', $idJenis));
     }
 }

@@ -23,6 +23,7 @@ window.Vue = require('vue');
 Vue.component('shopping-page', require('./components/ShoppingPage.vue').default);
 Vue.component('cart-page', require('./components/CartPage.vue').default);
 Vue.component('schedule-list', require('./components/ScheduleList').default);
+Vue.component('schedule-list-hearing-test', require('./components/ScheduleListHearingTest').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

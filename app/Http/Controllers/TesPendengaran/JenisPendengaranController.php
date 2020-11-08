@@ -27,9 +27,11 @@ class JenisPendengaranController extends Controller
 
     public function show($id)
     {
-        $tesPendengarans = TesPendengaran::jenis($id)->get();
-        return view('hearingtest.show',[
-            'hearingCenters' => $tesPendengarans
+        $jenis = JenisTesPendengaran::findOrFail($id);
+        $tesPendengarans = $jenis->tesPendengarans;
+        return view('hearingtest.testlocations.index',[
+            'hearingCenters' => $tesPendengarans,
+            'jenis' => $jenis,
         ]);
     }
 
