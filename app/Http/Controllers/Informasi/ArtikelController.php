@@ -31,6 +31,7 @@ class ArtikelController extends Controller
     public function store()
     {
         $responseArtikel = TransformerArtikel::make();
+        // dd($responseArtikel);
         $responseTags = TransformerArtikel::tags();
         $artikel = Artikel::create($responseArtikel);
         $artikel->kategoris()->attach($responseTags);

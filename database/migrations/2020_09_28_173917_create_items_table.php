@@ -15,6 +15,7 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('jenis_belanja_id');
             $table->string('nama');
             $table->string('harga');
             $table->bigInteger('stok');

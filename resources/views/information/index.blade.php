@@ -32,7 +32,7 @@
                 @foreach ($articles as $article)
                     <a class='card rounded-xl text-dark mb-3' href="{{route('deafcare.informasi.artikel.show', $article->id)}}">
                         <div class="card-body d-flex">
-                            <img class="rounded mr-3" src="{{ asset('img/dummy.jpg') }}" alt="..."
+                            <img class="rounded mr-3" src="{{ $article->image }}" alt="..."
                                 style="width: 120px; height:82px; object-fit:cover">
                             <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
                                 <div>

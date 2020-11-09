@@ -12,4 +12,9 @@ class Item extends Model
     {
         return $this->belongsToMany('App\Transaksi');
     }
+
+    public function jenis()
+    {
+        return $this->belongsTo('App\JenisBelanja');
+    }
 }

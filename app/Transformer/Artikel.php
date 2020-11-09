@@ -10,6 +10,7 @@ class Artikel
         $response = [
             'judul' => request()->judul,
             'isi' => request()->isi,
+            'gambar' => empty(request()->file('gambar')) ? request()->gambar_old : uploadImage(),
             'user_id' => 1
         ];
         return $response;
