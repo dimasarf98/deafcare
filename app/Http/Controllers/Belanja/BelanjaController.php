@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Belanja;
 
 use App\Item;
+use App\JenisBelanja;
 use App\Transformer\BelanjaItem;
 use Illuminate\Http\Request;
 
@@ -18,34 +19,45 @@ class BelanjaController extends Controller
 
     public function create()
     {
-        //
+        $jenises = JenisBelanja::all();
+        return view('shopping.create', compact('jenises'));
     }
 
     public function store()
     {
         $response = BelanjaItem::make();
         Item::create($response);
+
+        return redirect(route('deafcare.belanja.user.item.index'));
     }
 
     public function show($id)
     {
         $item = Item::findorfail($id);
+
+        return view('shopping.show', compact('item'));
     }
 
     public function edit($id)
     {
         $item = Item::findorfail($id);
+        $jenises = JenisBelanja::all();
+        return view('shopping.edit', compact('item', 'jenises'));
     }
 
     public function update($id)
     {
         $response = BelanjaItem::make();
         Item::findorfail($id)->update($response);
+
+        return redirect(route('deafcare.belanja.user.item.show', $id));
     }
 
     public function destroy($id)
     {
         Item::findorfail($id)->delete();
+
+        return redirect(route('deafcare.belanja.user.item.index'));
     }
 
     public function cart()

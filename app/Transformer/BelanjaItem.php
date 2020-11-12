@@ -10,6 +10,7 @@ class BelanjaItem
             'nama' => request()->nama,
             'harga' => request()->harga,
             'stok' => request()->stok,
+            'jenis_belanja_id' => request()->jenis_belanja_id,
         ];
         return $response;
     }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    protected $fillable = ['nama', 'harga','stok'];
+    protected $guarded = [];
 
     public function transaksis()
     {
@@ -15,6 +15,6 @@ class Item extends Model
 
     public function jenis()
     {
-        return $this->belongsTo('App\JenisBelanja');
+        return $this->belongsTo('App\JenisBelanja', 'jenis_belanja_id');
     }
 }

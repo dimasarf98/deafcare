@@ -63,3 +63,28 @@ a.link-style-none {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.banner{
+    @extend .position-relative;
+}
+
+.banner:after{
+    content: "";
+    @extend .d-block;
+    padding-bottom: 50%
+}
+
+.banner > * {
+    @extend .position-absolute;
+}
+
+.module-wrapper {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.module-item {
+
+}
