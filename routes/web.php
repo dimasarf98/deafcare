@@ -50,6 +50,7 @@ Route::get('/tespendengaran/show', function() {
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
     Route::get('home', 'HomeController@index')->name('home');
+    Route::get('profil', 'Profil\ProfilController@index')->name('profil');
     Route::namespace('Edukasi')->prefix('edukasi')->name('edukasi.')->group(function()
     {
         Route::resource('video', 'VideoController', [
