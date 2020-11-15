@@ -13,7 +13,7 @@ class JenisTesPendengaranTesPendengaranSeeder extends Seeder
      */
     public function run()
     {
-        JenisTesPendengaran::truncate();
+        DB::table('jenis_tes_pendengaran_tes_pendengaran')->truncate();
         TesPendengaran::findorfail(1)->jenises()->attach(
             [
                 [
@@ -79,6 +79,14 @@ class JenisTesPendengaranTesPendengaranSeeder extends Seeder
         TesPendengaran::findorfail(7)->jenises()->attach(
             [
                 [
+                    'jenis_tes_pendengaran_id' => '1',
+                    'tes_pendengaran_id' => '7'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '5',
+                    'tes_pendengaran_id' => '7'
+                ],
+                [
                     'jenis_tes_pendengaran_id' => '6',
                     'tes_pendengaran_id' => '7'
                 ]
@@ -109,15 +117,11 @@ class JenisTesPendengaranTesPendengaranSeeder extends Seeder
         TesPendengaran::findorfail(9)->jenises()->attach(
             [
                 [
+                    'jenis_tes_pendengaran_id' => '5',
+                    'tes_pendengaran_id' => '9'
+                ],
+                [
                     'jenis_tes_pendengaran_id' => '6',
-                    'tes_pendengaran_id' => '9'
-                ],
-                [
-                    'jenis_tes_pendengaran_id' => '1',
-                    'tes_pendengaran_id' => '9'
-                ],
-                [
-                    'jenis_tes_pendengaran_id' => '3',
                     'tes_pendengaran_id' => '9'
                 ]
             ]
@@ -129,20 +133,52 @@ class JenisTesPendengaranTesPendengaranSeeder extends Seeder
                     'jenis_tes_pendengaran_id' => '1',
                     'tes_pendengaran_id' => '10'
                 ],
+                [
+                    'jenis_tes_pendengaran_id' => '2',
+                    'tes_pendengaran_id' => '10'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '3',
+                    'tes_pendengaran_id' => '10'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '4',
+                    'tes_pendengaran_id' => '10'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '5',
+                    'tes_pendengaran_id' => '10'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '6',
+                    'tes_pendengaran_id' => '10'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '7',
+                    'tes_pendengaran_id' => '10'
+                ],
             ]
         );
 
         TesPendengaran::findorfail(11)->jenises()->attach(
             [
                 [
-                    'jenis_tes_pendengaran_id' => '1',
+                    'jenis_tes_pendengaran_id' => '4',
                     'tes_pendengaran_id' => '11'
                 ],
+                [
+                    'jenis_tes_pendengaran_id' => '6',
+                    'tes_pendengaran_id' => '11'
+                ]
             ]
         );
 
         TesPendengaran::findorfail(12)->jenises()->attach(
             [
+                [
+                    'jenis_tes_pendengaran_id' => '1',
+                    'tes_pendengaran_id' => '12'
+                ],
                 [
                     'jenis_tes_pendengaran_id' => '6',
                     'tes_pendengaran_id' => '12'
@@ -150,40 +186,44 @@ class JenisTesPendengaranTesPendengaranSeeder extends Seeder
             ]
         );
 
-        // TesPendengaran::findorfail(13)->jenises()->attach(
-        //     [
-        //         [
-        //             'jenis_tes_pendengaran_id' => '1',
-        //             'tes_pendengaran_id' => '13'
-        //         ],
-        //     ]
-        // );
+        TesPendengaran::findorfail(13)->jenises()->attach(
+            [
+                [
+                    'jenis_tes_pendengaran_id' => '1',
+                    'tes_pendengaran_id' => '13'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '2',
+                    'tes_pendengaran_id' => '13'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '6',
+                    'tes_pendengaran_id' => '13'
+                ],
+            ]
+        );
 
-        // TesPendengaran::findorfail(14)->jenises()->attach(
-        //     [
-        //         [
-        //             'jenis_tes_pendengaran_id' => '3',
-        //             'tes_pendengaran_id' => '14'
-        //         ],
-        //         [
-        //             'jenis_tes_pendengaran_id' => '6',
-        //             'tes_pendengaran_id' => '14'
-        //         ],
-        //         [
-        //             'jenis_tes_pendengaran_id' => '2',
-        //             'tes_pendengaran_id' => '14'
-        //         ],
-        //         [
-        //             'jenis_tes_pendengaran_id' => '1',
-        //             'tes_pendengaran_id' => '14'
-        //         ],
-        //     ]
-        // );
+        TesPendengaran::findorfail(14)->jenises()->attach(
+            [
+                [
+                    'jenis_tes_pendengaran_id' => '1',
+                    'tes_pendengaran_id' => '14'
+                ],
+            ]
+        );
 
         TesPendengaran::findorfail(15)->jenises()->attach(
             [
                 [
-                    'jenis_tes_pendengaran_id' => '6',
+                    'jenis_tes_pendengaran_id' => '1',
+                    'tes_pendengaran_id' => '15'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '2',
+                    'tes_pendengaran_id' => '15'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '4',
                     'tes_pendengaran_id' => '15'
                 ],
             ]
@@ -228,29 +268,68 @@ class JenisTesPendengaranTesPendengaranSeeder extends Seeder
         TesPendengaran::findorfail(20)->jenises()->attach(
             [
                 [
-                    'jenis_tes_pendengaran_id' => '2',
-                    'tes_pendengaran_id' => '20'
-                ],
-                [
-                    'jenis_tes_pendengaran_id' => '1',
-                    'tes_pendengaran_id' => '20'
-                ],
-                [
                     'jenis_tes_pendengaran_id' => '6',
-                    'tes_pendengaran_id' => '20'
-                ],
-                [
-                    'jenis_tes_pendengaran_id' => '4',
                     'tes_pendengaran_id' => '20'
                 ],
             ]
         );
 
-        TesPendengaran::findorfail(20)->jenises()->attach(
+        TesPendengaran::findorfail(21)->jenises()->attach(
+            [
+                [
+                    'jenis_tes_pendengaran_id' => '2',
+                    'tes_pendengaran_id' => '21'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '1',
+                    'tes_pendengaran_id' => '21'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '6',
+                    'tes_pendengaran_id' => '21'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '4',
+                    'tes_pendengaran_id' => '21'
+                ],
+            ]
+        );
+
+        TesPendengaran::findorfail(22)->jenises()->attach(
             [
                 [
                     'jenis_tes_pendengaran_id' => '3',
-                    'tes_pendengaran_id' => '20'
+                    'tes_pendengaran_id' => '22'
+                ],
+            ]
+        );
+
+        TesPendengaran::findorfail(24)->jenises()->attach(
+            [
+                [
+                    'jenis_tes_pendengaran_id' => '1',
+                    'tes_pendengaran_id' => '24'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '2',
+                    'tes_pendengaran_id' => '24'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '3',
+                    'tes_pendengaran_id' => '24'
+                ],
+            ]
+        );
+
+        TesPendengaran::findorfail(27)->jenises()->attach(
+            [
+                [
+                    'jenis_tes_pendengaran_id' => '4',
+                    'tes_pendengaran_id' => '27'
+                ],
+                [
+                    'jenis_tes_pendengaran_id' => '6',
+                    'tes_pendengaran_id' => '27'
                 ],
             ]
         );

@@ -3,7 +3,7 @@
         <i class="fas fa-home"></i>
         <small>Utama</small> 
     </a>
-    <a class="flex-fill d-flex justify-content-center align-items-center flex-column {{ Route::is('deafcare.aktivitas') ? ' active' : '' }}" href="{{route('deafcare.aktivitas')}}">
+    <a class="flex-fill d-flex justify-content-center align-items-center flex-column {{ Route::is('deafcare.aktivitas.index') ? ' active' : '' }}" href="{{route('deafcare.aktivitas.index')}}">
         <i class="fas fa-list"></i>
         <small>Aktivitas</small> 
     </a>

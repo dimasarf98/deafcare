@@ -26,7 +26,7 @@ class SekolahSeeder extends Seeder
                 'nama' => 'Yayasan'
             ],
             [
-                'nama' => 'Slb'
+                'nama' => 'SLB'
             ],
             [
                 'nama' => 'Tempat Terapi'

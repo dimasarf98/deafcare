@@ -35,6 +35,15 @@
     </div>
     <div class="row">
         <div class="col-12">
+            <div class="alert alert-warning" role="alert">
+                <small>
+                    {{$jenis->deskripsi}}
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
             @forelse ($hearingCenters as $hearingCenter)
                 <div class = 'card rounded-xl link-style-none mb-3'>
                     <div class="card-body d-flex">
@@ -115,3 +124,4 @@
     ></x-floating-add-button>
 </main>
 @endsection
+ 

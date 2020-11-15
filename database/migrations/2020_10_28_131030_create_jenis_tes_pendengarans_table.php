@@ -16,6 +16,7 @@ class CreateJenisTesPendengaransTable extends Migration
         Schema::create('jenis_tes_pendengarans', function (Blueprint $table) {
             $table->id();
             $table->longText('nama');
+            $table->longText('deskripsi');
             $table->longText('gambar');
             $table->timestamps();
         });

@@ -3,8 +3,8 @@
 @section('content')
     <header class="sticky-top">
         <x-title-bar
-            title="[Judul Event]"
-            :back-url="route('event.index')"></x-title-bar>
+            title="{{$event->name}}"
+            :back-url="route('deafcare.event.index')"></x-title-bar>
     </header>
     <main class="px-3 pt-3">
         <article>
@@ -16,21 +16,19 @@
                 </div>
                 <div class="col-6">
                     <h1 class="font-weight-bold h4">
-                        Event Alat Bantu Dengar Festival
+                       {{$event->name}}
                     </h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias maxime iste laboriosam, at possimus neque ipsum nisi, sed quod debitis reiciendis tenetur doloremque, ipsam dolorum libero temporibus? Cupiditate, nostrum obcaecati.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio amet culpa enim aliquam deleniti quibusdam corporis. Dolorem tempore praesentium incidunt necessitatibus aperiam explicabo saepe modi, nulla, enim consequatur similique expedita.
+                        {{$event->deskripsi}}
                     </p>
                 </div>
             </div>
         </article>
+        @if (Auth()->user()->roles()->admin())
         <div class="mb-3">
             <a href="{{route('event.edit')}}" class="btn btn-success">
                 <i class="fas fa-edit"></i>
@@ -63,5 +61,7 @@
                 </div>
             </div>
         </div>
+        @endif
+        
     </main>
 @endsection

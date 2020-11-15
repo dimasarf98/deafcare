@@ -76,7 +76,7 @@
         </div>
         <div class="module-item">
             <x-card-module bg-color="#ff8a8a" icon-class="fas fa-calendar-week" title="Event dan Donasi"
-                :url="route('event.index')" />
+                :url="route('deafcare.event.index')" />
         </div>
     </div>
 </main>

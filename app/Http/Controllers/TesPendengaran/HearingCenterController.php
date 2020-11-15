@@ -15,7 +15,7 @@ class HearingCenterController extends Controller
     public function index()
     {
         
-        $jenis = JenisTesPendengaran::findOrFail(1);
+        $jenis = JenisTesPendengaran::find(1);
         
         $hearingCenters = $jenis->tesPendengarans;
         $jenisAll = JenisTesPendengaran::all();
@@ -48,6 +48,7 @@ class HearingCenterController extends Controller
     public function show($id)
     {
         $jenis = JenisTesPendengaran::findOrFail($id);
+    
         $hearingCenters = $jenis->tesPendengarans;
         $jenisAll = JenisTesPendengaran::all();
         return view('hearingtest.testlocations.index',[

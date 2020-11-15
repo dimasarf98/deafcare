@@ -29,7 +29,9 @@ class DatabaseSeeder extends Seeder
             JenisTesPendengaranTesPendengaranSeeder::class,
             // VideoSeeder::class,
             InformationSeeder::class,
-            BelanjaSeeder::class
+            BelanjaSeeder::class,
+            DonationSeeder::class,
+            EventSeeder::class
         ]);
     }
 }

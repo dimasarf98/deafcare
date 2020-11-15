@@ -58,7 +58,7 @@ class BelanjaSeeder extends Seeder
                 'stok' => 100,
             ],
             [
-                'jenis_belanja_id' => 1,
+                'jenis_belanja_id' => 3,
                 'nama' => 'Masker Transparan Tunarungu (N95)',
                 'harga' => 'Rp. 29000,00',
                 'stok' => 100,

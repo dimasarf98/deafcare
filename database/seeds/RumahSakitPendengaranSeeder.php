@@ -523,5 +523,256 @@ class RumahSakitPendengaranSeeder extends Seeder
                 ],
             ]
         );
+
+        //RSP 13
+        $id13 = TesPendengaran::create(
+            [
+                'nama' => 'RS Akademik UGM Yogyakarta',
+                'alamat' => 'Jl. Kabupaten (Ring Road), Kronggahan, Trihanggo, Gamping, Sleman, Yogyakarta',
+                'no_telp' => '(0274) 4530404  https://rsa.ugm.ac.id/',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603859525/rumah%20sakit/rs--bethesda_wec95y.jpg'
+
+            ]
+        )->id;
+        TesPendengaran::findorfail($id13)->jadwals()->createMany(
+            [
+                [
+                    'hari' => 'Senin',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Selasa',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Rabu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Kamis',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Jumat',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Sabtu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Minggu',
+                    'jam' => '24 Jam',
+                    
+                ],
+            ]
+        );
+
+
+        //RSP 14
+        $id14 = TesPendengaran::create(
+            [
+                'nama' => 'RS Universitas Islam Indonesia',
+                'alamat' => 'Jl. Srandakan Km 5,5, Gedongsari, Wijirejo, Kec. Pandak, Bantul, Jogja',
+                'no_telp' => '(0274) 2812999  https://rsuii.co.id/',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603859297/rumah%20sakit/rs-universitas-islam-indonesia-HCFH00001389_vt1f6q.jpg'
+
+            ]
+        )->id;
+        TesPendengaran::findorfail($id14)->jadwals()->createMany(
+            [
+                [
+                    'hari' => 'Senin',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Selasa',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Rabu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Kamis',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Jumat',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Sabtu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Minggu',
+                    'jam' => '24 Jam',
+                    
+                ],
+            ]
+        );
+
+        //RSP 15
+        $id15 = TesPendengaran::create(
+            [
+                'nama' => 'RS Hermina Yogyakarta',
+                'alamat' => 'Jl. Selokan Mataram, RT.06/RW.50, Meguwo, Maguwoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta',
+                'no_telp' => '(0274) 2812999',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603859775/rumah%20sakit/hermina-jogja_nmfcaa.jpg'
+
+            ]
+        )->id;
+        TesPendengaran::findorfail($id15)->jadwals()->createMany(
+            [
+                [
+                    'hari' => 'Senin',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Selasa',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Rabu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Kamis',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Jumat',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Sabtu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Minggu',
+                    'jam' => '24 Jam',
+                    
+                ],
+            ]
+        );
+
+        //RSP 16
+        $id16 = TesPendengaran::create(
+            [
+                'nama' => 'RS Panti Rapih',
+                'alamat' => 'Jalan Cik Di Tiro No. 30, Gondokusuman, Yogyakarta',
+                'no_telp' => '(0274) 563333  https://rsuii.co.id/',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603859120/rumah%20sakit/1rspr_sh1wjp.jpg'
+
+            ]
+        )->id;
+        TesPendengaran::findorfail($id16)->jadwals()->createMany(
+            [
+                [
+                    'hari' => 'Senin',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Selasa',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Rabu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Kamis',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Jumat',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Sabtu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Minggu',
+                    'jam' => '24 Jam',
+                    
+                ],
+            ]
+        );
+
+        //RSP 17
+        $id17 = TesPendengaran::create(
+            [
+                'nama' => 'RS Bethesdha',
+                'alamat' => 'Jl. Jend. Sudirman No.70, Kotabaru, Kec. Gondokusuman, Kota Yogyakarta',
+                'no_telp' => '(0274) 586688  https://www.bethesda.or.id/',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1605407552/rumah%20sakit/download_2_qakfsw.jpg'
+
+            ]
+        )->id;
+        TesPendengaran::findorfail($id17)->jadwals()->createMany(
+            [
+                [
+                    'hari' => 'Senin',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Selasa',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Rabu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Kamis',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Jumat',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Sabtu',
+                    'jam' => '24 Jam',
+                    
+                ],
+                [
+                    'hari' => 'Minggu',
+                    'jam' => '24 Jam',
+                    
+                ],
+            ]
+        );
     }
 }

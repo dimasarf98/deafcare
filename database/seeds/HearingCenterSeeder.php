@@ -17,7 +17,8 @@ class HearingCenterSeeder extends Seeder
         $id1 = TesPendengaran::create(
             [
                 'nama' => 'Audiotone Yogyakarta',
-                'alamat' => 'Alamat 1 : YAP Square No. 23B Jl. C. Simanjuntak No. 2 Yogyakarta \n Alamat 2 : Jl. Tirtodipuran No.38, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta',
+                'alamat' => 'Alamat 1 : YAP Square No. 23B Jl. C. Simanjuntak No. 2 Yogyakarta 
+                 Alamat 2 : Jl. Tirtodipuran No.38, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta',
                 'no_telp' => 'Kontak 1 : Tlp : (0274) 585 298 SMS/WA : 0815 1924 8309 Kontak 2: (0274) 387664',
                 'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603897212/rumah%20sakit/logo_j8tm8a.svg'
             ]
@@ -50,48 +51,7 @@ class HearingCenterSeeder extends Seeder
                 ],
             ]
         );
-
-        //HC 2
-        $id2 = TesPendengaran::create(
-            [
-                'nama' => 'Audiotone Klinik Sari Asih',
-                'alamat' => 'Jl. Tirtodipuran No.38, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta',
-                'no_telp' => '(0274) 387664',
-                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603897212/rumah%20sakit/logo_j8tm8a.svg'
-            ]
-        )->id;
-        TesPendengaran::findorfail($id2)->jadwals()->createMany(
-            [
-                [
-                    'hari' => 'Sabtu',
-                    'jam' => '09.30 - 20.00'
-                ],
-                [
-                    'hari' => 'Minggu',
-                    'jam' => '09.30 - 20.00'
-                ],
-                [
-                    'hari' => 'Senin',
-                    'jam' => '09.30 - 20.00'
-                ],
-                [
-                    'hari' => 'Selasa',
-                    'jam' => '09.30 - 20.00'
-                ],
-                [
-                    'hari' => 'Rabu',
-                    'jam' => '09.30 - 20.00'
-                ],
-                [
-                    'hari' => 'Kamis',
-                    'jam' => '09.30 - 20.00'
-                ],
-                [
-                    'hari' => 'Jumat',
-                    'jam' => '09.30 - 20.00'
-                ],
-            ]
-        );
+        
 
         //HC 3
         $id3 = TesPendengaran::create(
@@ -172,7 +132,7 @@ class HearingCenterSeeder extends Seeder
         //HC 5
         $id5 = TesPendengaran::create(
             [
-                'nama' => 'Alat Bantu Dengar Eartec',
+                'nama' => 'Pusat Alat Bantu Dengar Eartec',
                 'alamat' => 'Jl. Asem Gede No.22A, Sanggrahan, Condongcatur, Kec. Depok, Kabupaten Sleman',
                 'no_telp' => '0817-4876-284',
                 'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603897856/rumah%20sakit/1507588_tokn9o.jpg'
@@ -353,6 +313,83 @@ class HearingCenterSeeder extends Seeder
                 [
                     'hari' => 'Jumat',
                     'jam' => '09.00 - 15.00'
+                ],
+                [
+                    'hari' => 'Sabtu',
+                    'jam' => '09.00 - 15.00'
+                ],
+            ]
+        );
+
+
+        //HC 10
+        $id10 = TesPendengaran::create(
+            [
+                'nama' => 'ABDI Semarang',
+                'alamat' => 'Jl. MT Haryono No. 860 A, Perempatan Bangkong',
+                'no_telp' => '(024) 3548 060',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1605405609/rumah%20sakit/download_rbrofg.jpg'
+            ]
+        )->id;
+        TesPendengaran::findorfail($id10)->jadwals()->createMany(
+            [
+                [
+                    'hari' => 'Senin',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Selasa',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Rabu',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Kamis',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Jumat',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Sabtu',
+                    'jam' => '09.00 - 15.00'
+                ],
+            ]
+        );
+
+        //HC 11
+        $id11 = TesPendengaran::create(
+            [
+                'nama' => 'ABDI RS KARIADI SMG',
+                'alamat' => 'Jl. Dr Sutomo No. 16, Semarang, Jawa Tengah, Indonesia',
+                'no_telp' => '(024) 841736',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1605405809/rumah%20sakit/download_1_qhxija.jpg'
+            ]
+        )->id;
+        TesPendengaran::findorfail($id11)->jadwals()->createMany(
+            [
+                [
+                    'hari' => 'Senin',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Selasa',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Rabu',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Kamis',
+                    'jam' => '09.00 - 17.00'
+                ],
+                [
+                    'hari' => 'Jumat',
+                    'jam' => '09.00 - 17.00'
                 ],
                 [
                     'hari' => 'Sabtu',

@@ -47,6 +47,7 @@ Route::get('/tespendengaran', function() {
 Route::get('/tespendengaran/show', function() {
     return view('hearingtest.show');
 })->name('tespendengaran.show');
+
 Route::get('/event', function() {
     return view('eventdonation.event.index');
 })->name('event.index');
@@ -59,26 +60,26 @@ Route::get('/event/edit', function() {
 Route::get('/event/show', function() {
     return view('eventdonation.event.show');
 })->name('event.show');
-Route::get('/donasi', function() {
-    return view('eventdonation.donation.index');
-})->name('donasi.index');
+
+// Route::get('/donasi', function() {
+//     return view('eventdonation.donation.index');
+// })->name('donasi.index');
+
 Route::get('/donasi/create', function() {
     return view('eventdonation.donation.create');
 })->name('donasi.create');
 Route::get('/donasi/edit', function() {
     return view('eventdonation.donation.edit');
 })->name('donasi.edit');
-Route::get('/donasi/show', function() {
-    return view('eventdonation.donation.show');
-})->name('donasi.show');
+// Route::get('/donasi/show', function() {
+//     return view('eventdonation.donation.show');
+// })->name('donasi.show');
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
     Route::get('home', 'HomeController@index')->name('home');
     Route::get('profil', 'Profil\ProfilController@index')->name('profil');
-    Route::get('aktivitas', function(){
-        return view('activity.index');
-    })->name('aktivitas');
+    Route::resource('aktivitas', 'ActivityController');
     Route::namespace('Edukasi')->prefix('edukasi')->name('edukasi.')->group(function()
     {
         Route::resource('video', 'VideoController', [
@@ -90,6 +91,17 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
             Route::resource('video', 'VideoController');
         });
     });
+
+    Route::namespace('Donasi')->group(function()
+    {
+        Route::resource('donasi', 'DonationController');
+    });
+
+    Route::namespace('Event')->group(function()
+    {
+        Route::resource('event', 'EventController');
+    });
+
     Route::namespace('Kesehatan')->prefix('kesehatan')->name('kesehatan.')->group(function()
     {
         Route::prefix('user')->name('user.')->group(function()
