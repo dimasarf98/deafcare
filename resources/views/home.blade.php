@@ -7,28 +7,28 @@
 <main class="px-3 pt-3" style="padding-bottom: 64px;">
     <div class="row mb-3">
         <div class="col-12">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div id="carouselBanner" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleControls" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+                    <li data-target="#carouselBanner" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselBanner" data-slide-to="1"></li>
+                    <li data-target="#carouselBanner" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="banner">
-                            <img src="{{asset('img/banner-1.png')}}" class="d-block rounded-lg w-100 h-100" alt="1"
+                            <img src="{{asset('img/banner-1.png')}}" class="d-block rounded-xl w-100 h-100" alt="1"
                                 style="object-fit: cover">
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="banner">
-                            <img src="{{asset('img/banner-2.png')}}" class="d-block rounded-lg w-100 h-100" alt="2"
+                            <img src="{{asset('img/banner-2.png')}}" class="d-block rounded-xl w-100 h-100" alt="2"
                                 style="object-fit: cover">
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="banner">
-                            <img src="{{asset('img/banner-3.png')}}" class="d-block rounded-lg w-100 h-100" alt="3"
+                            <img src="{{asset('img/banner-3.png')}}" class="d-block rounded-xl w-100 h-100" alt="3"
                                 style="object-fit: cover">
                         </div>
                     </div>
@@ -73,6 +73,10 @@
         <div class="module-item">
             <x-card-module bg-color="#a6079b" icon-class="fas fa-deaf" title="Hearing Center"
                 :url="route('deafcare.tespendengaran.user.jenis.index')" />
+        </div>
+        <div class="module-item">
+            <x-card-module bg-color="#ff8a8a" icon-class="fas fa-calendar-week" title="Event dan Donasi"
+                :url="route('event.index')" />
         </div>
     </div>
 </main>

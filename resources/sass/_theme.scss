@@ -16,6 +16,20 @@
     @extend .position-absolute;
 }
 
+.poster {
+    @extend .position-relative;
+}
+
+.poster::after{
+    content: "";
+    @extend .d-block;
+    padding-bottom: 141%
+}
+
+.poster > * {
+    @extend .position-absolute;
+}
+
 .rounded-xl {
     border-radius: 0.75rem;
 }
@@ -85,6 +99,11 @@ a.link-style-none {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.module-item {
-
+.text-truncate-4 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* to specify the number of lines you want the text to run through... */
+    -webkit-line-clamp: 4;
+    /* hide the overflowing text, i.e, texts that did not fit in to the box */
+    overflow: hidden;
 }

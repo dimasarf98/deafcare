@@ -46,11 +46,38 @@ Route::get('/tespendengaran', function() {
 Route::get('/tespendengaran/show', function() {
     return view('hearingtest.show');
 })->name('tespendengaran.show');
+Route::get('/event', function() {
+    return view('eventdonation.event.index');
+})->name('event.index');
+Route::get('/event/create', function() {
+    return view('eventdonation.event.create');
+})->name('event.create');
+Route::get('/event/edit', function() {
+    return view('eventdonation.event.edit');
+})->name('event.edit');
+Route::get('/event/show', function() {
+    return view('eventdonation.event.show');
+})->name('event.show');
+Route::get('/donasi', function() {
+    return view('eventdonation.donation.index');
+})->name('donasi.index');
+Route::get('/donasi/create', function() {
+    return view('eventdonation.donation.create');
+})->name('donasi.create');
+Route::get('/donasi/edit', function() {
+    return view('eventdonation.donation.edit');
+})->name('donasi.edit');
+Route::get('/donasi/show', function() {
+    return view('eventdonation.donation.show');
+})->name('donasi.show');
 
 Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function ()
 {
     Route::get('home', 'HomeController@index')->name('home');
     Route::get('profil', 'Profil\ProfilController@index')->name('profil');
+    Route::get('aktivitas', function(){
+        return view('activity.index');
+    })->name('aktivitas');
     Route::namespace('Edukasi')->prefix('edukasi')->name('edukasi.')->group(function()
     {
         Route::resource('video', 'VideoController', [
