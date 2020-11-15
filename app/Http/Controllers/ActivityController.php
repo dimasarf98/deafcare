@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Artikel;
+use App\Donation;
+use App\Event;
 use App\Forum;
+use App\Item;
 use App\Sekolah;
 use App\TenagaKesehatan;
 use Illuminate\Http\Request;
@@ -21,16 +25,42 @@ class ActivityController extends Controller
         $sekolah = Sekolah::latest()->first();
         $komunitas = Forum::latest()->first();
         $berita = Artikel::latest()->first();
-        $belanja = Artikel::latest()->first();
+        $belanja = Item::latest()->first();
         $event = Event::latest()->first();
-        $activites[]=
+        $donation = Donation::latest()->first();
+        $activities[]=
         [
             [
-                'name' => $expert->name,
-                
-            ]
+                'nama' => $expert->name,
+                'kategori' => 'Expert'
+            ],
+            [
+                'nama' => $sekolah->nama,
+                'kategori' => 'Sekolah'
+            ],
+            [
+                'nama' => $komunitas->nama,
+                'kategori' => 'Sekolah'
+            ],
+            [
+                'nama' => $berita->judul,
+                'kategori' => 'Berita'
+            ],
+            [
+                'nama' => $belanja->judul,
+                'kategori' => 'Berita'
+            ],
+            [
+                'nama' => $event->name,
+                'kategori' => 'Event'
+            ],
+            [
+                'nama' => $donation->name,
+                'kategori' => 'Donasi'
+            ],
         ];
-        return view('activity.index');
+        
+        return view('activity.index', ['activities' => $activities[0]]);
     }
 
     /**
