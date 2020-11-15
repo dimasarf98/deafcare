@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Belanja;
 
 use App\Item;
 use App\JenisBelanja;
+use App\JenisKesehatan;
 use App\Transformer\BelanjaItem;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,11 @@ class BelanjaController extends Controller
     public function index()
     {
         $items = Item::all();
+        $tags = JenisBelanja::all();
         return view('shopping.index',[
-            'items' => $items
+            'items' => $items,
+            'tags' => $tags,
+            'active' => 0
         ]);
     }
 
@@ -36,6 +40,17 @@ class BelanjaController extends Controller
         $item = Item::findorfail($id);
 
         return view('shopping.show', compact('item'));
+    }
+
+    public function getJenis($id)
+    {
+        $items = JenisBelanja::findorfail($id)->items;
+        $tags = JenisBelanja::all();
+        return view('shopping.index',[
+            'items' => $items,
+            'tags' => $tags,
+            'active' => $id
+        ]);
     }
 
     public function edit($id)

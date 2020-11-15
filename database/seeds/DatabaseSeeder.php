@@ -26,7 +26,10 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             KomunitasSeeder::class,
             SekolahSeeder::class,
-            JenisTesPendengaranTesPendengaranSeeder::class
+            JenisTesPendengaranTesPendengaranSeeder::class,
+            // VideoSeeder::class,
+            InformationSeeder::class,
+            BelanjaSeeder::class
         ]);
     }
 }

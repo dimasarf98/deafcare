@@ -17,6 +17,11 @@ class Artikel extends Model
     {
         return $this->belongsTo('App\User');
     }
+    
+    public function replies()
+    {
+        return $this->hasMany('App\Reply');
+    }
 
     public function scopeTag(Builder $builder, $id)
     {

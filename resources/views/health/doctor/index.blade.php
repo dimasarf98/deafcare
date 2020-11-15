@@ -4,7 +4,7 @@
 <header class="sticky-top">
     <x-title-bar
         :title="$jenisKesehatan->judul"
-        :back-url="route('deafcare.kesehatan.user.jenis.index')"></x-title-bar>
+        :back-url="route('deafcare.home')"></x-title-bar>
 </header>
 <main class="px-3 pt-3">
     <div class="row mb-3">
@@ -19,10 +19,13 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            {{-- Filter Area --}}
+    <div class="row mb-3">
+        <div class="col-12 w-100" style="overflow-x: auto; white-space: nowrap">
+            @foreach ($jenis as $item)
+                <a href="{{route('deafcare.kesehatan.user.tenagaKesehatan.show', $item->id)}}" class="btn {{ $active == $item->id ? 'btn-danger' : 'btn-outline-danger' }} btn-sm px-3 py-1 rounded-pill mr-1 my-1">{{ $item->judul }}</a>
+            @endforeach
         </div>
+
     </div>
     <div class="row">
         <div class="col-12">

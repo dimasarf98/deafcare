@@ -12,6 +12,7 @@ class RumahSakitPendengaranSeeder extends Seeder
      */
     public function run()
     {
+        // TesPendengaran::truncate();
         //RSP 1
         $id1 = TesPendengaran::create(
             [

@@ -50,13 +50,13 @@
         </div>
     </div>
     <div class="module-wrapper mb-3">
-        <div class="module-item">
+        {{-- <div class="module-item">
             <x-card-module bg-color="#7d7fff" icon-class="fab fa-youtube" title="Edukasi"
                 :url="route('deafcare.edukasi.video.index')" />
-        </div>
+        </div> --}}
         <div class="module-item">
             <x-card-module bg-color="#f5770a" icon-class="fas fa-stethoscope" title="Expert"
-                :url="route('deafcare.kesehatan.user.jenis.index')" />
+                :url="route('deafcare.kesehatan.user.tenagaKesehatan.index')" />
         </div>
         <div class="module-item">
             <x-card-module bg-color="#73c949" icon-class="fas fa-hands-helping" title="Sekolah dan komunitas"
@@ -72,7 +72,7 @@
         </div>
         <div class="module-item">
             <x-card-module bg-color="#a6079b" icon-class="fas fa-deaf" title="Hearing Center"
-                :url="route('deafcare.tespendengaran.user.jenis.index')" />
+                :url="route('deafcare.tespendengaran.user.hearingcenter.index')" />
         </div>
         <div class="module-item">
             <x-card-module bg-color="#ff8a8a" icon-class="fas fa-calendar-week" title="Event dan Donasi"

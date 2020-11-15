@@ -19,4 +19,20 @@ class Video
         ];
         return $reponse;
     }
+
+    public static function makeSeed($judul, $link)
+    {
+        $konten = getContent(request()->link);
+        $reponse = [
+            'judul' => request()->judul,
+            'uploader' => '',
+            'player' => getPlayer($konten),
+            'thumbnail' => getThumbnail($konten),
+            'durasi' => getDuration($konten),
+            'deskripsi' => getSnippet($konten)->description,
+            'viewCount' => getStats($konten)->viewCount,
+            'link' => request()->link
+        ];
+        return $reponse;
+    }
 }

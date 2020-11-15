@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Forum;
 
+use App\JenisSekolah;
 use App\Sekolah;
 use App\Transformer\Sekolah as TransformerSekolah;
 use Illuminate\Http\Request;
@@ -11,8 +12,11 @@ class SekolahController extends Controller
     public function index()
     {
         $sekolahs = Sekolah::all();
+        $tags = JenisSekolah::all();
         return view('schools.index' ,[
-            'sekolahs' => $sekolahs
+            'sekolahs' => $sekolahs,
+            'tags' => $tags,
+            'active' => 0
         ]);
     }
 
@@ -52,6 +56,17 @@ class SekolahController extends Controller
         $sekolah->profilSekolah()->update($response->profil);
 
         return redirect(route('deafcare.forum.user.sekolah.index'));
+    }
+
+    public function getByJenis($id)
+    {
+        $sekolahs = JenisSekolah::findorfail($id)->sekolahs;
+        $tags = JenisSekolah::all();
+        return view('schools.index' ,[
+            'sekolahs' => $sekolahs,
+            'tags' => $tags,
+            'active' => $id
+        ]);
     }
 
     public function destroy($id)

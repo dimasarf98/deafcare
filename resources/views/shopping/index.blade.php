@@ -17,6 +17,15 @@
                 </div>
             </div>
         </div>
+        <div class="row mb-3">
+            <div class="col-12 w-100" style="overflow-x: auto; white-space: nowrap">
+                <a href="{{route('deafcare.belanja.user.item.index')}}" class="btn {{ $active == 0 ? 'btn-danger' : 'btn-outline-danger' }} btn-sm px-3 py-1 rounded-pill mr-1 my-1">Semua</a>
+                @foreach ($tags as $tag)
+                    <a href="{{route('deafcare.belanja.user.item.jenis', $tag->id)}}" class="btn {{ $active == $tag->id ? 'btn-danger' : 'btn-outline-danger' }} btn-sm px-3 py-1 rounded-pill mr-1 my-1">{{ $tag->name }}</a>
+                @endforeach
+            </div>
+
+        </div>
         <div class="row">
             @forelse ($items as $item)
             <div class="col-6 mb-3">

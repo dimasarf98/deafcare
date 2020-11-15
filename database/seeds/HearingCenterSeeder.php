@@ -12,12 +12,13 @@ class HearingCenterSeeder extends Seeder
      */
     public function run()
     {
+        TesPendengaran::truncate();
         //HC 1
         $id1 = TesPendengaran::create(
             [
                 'nama' => 'Audiotone Yogyakarta',
-                'alamat' => 'YAP Square No. 23B Jl. C. Simanjuntak No. 2 Yogyakarta',
-                'no_telp' => 'Tlp : (0274) 585 298 SMS/WA : 0815 1924 8309',
+                'alamat' => 'Alamat 1 : YAP Square No. 23B Jl. C. Simanjuntak No. 2 Yogyakarta \n Alamat 2 : Jl. Tirtodipuran No.38, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta',
+                'no_telp' => 'Kontak 1 : Tlp : (0274) 585 298 SMS/WA : 0815 1924 8309 Kontak 2: (0274) 387664',
                 'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603897212/rumah%20sakit/logo_j8tm8a.svg'
             ]
         )->id;
@@ -285,7 +286,7 @@ class HearingCenterSeeder extends Seeder
         //HC 8
         $id8 = TesPendengaran::create(
             [
-                'nama' => 'Nobel Udiology Semarang',
+                'nama' => 'Nobel Audiology Semarang',
                 'alamat' => 'Jl. Dr. Cipto No. 49
                 Sarirejo, Semarang
                 Jawa Tengah',

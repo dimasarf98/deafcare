@@ -38,14 +38,9 @@ class JenisKesehatanSeeder extends DatabaseSeeder
             'deskripsi' => 'Konsultasikan kesehatan psikologis anda dan anak anak disini',
             'gambar'=> 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603853801/psychologist_d9w4b1.png'
         ];
-        $jenis6 = [
-            'judul' => 'Dokter Tumbuh Kembang',
-            'deskripsi' => '.......',
-            'gambar'=> 'https://res.cloudinary.com/dhavbtjea/image/upload/v1603853529/physiotherapist_hsbkhz.png'
-        ];
         
         DB::table('jenis_kesehatans')->insert([
-            $jenis1, $jenis2, $jenis3, $jenis4, $jenis5, $jenis6
+            $jenis1, $jenis2, $jenis3, $jenis4, $jenis5
         ]);
     }
 }

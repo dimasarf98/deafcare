@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Edukasi;
 
 use Alaouy\Youtube\Facades\Youtube;
+use App\Kategori;
 use App\Transformer\Video as TransformerVideo;
 use App\Video;
 use Illuminate\Http\Request;
@@ -12,8 +13,11 @@ class VideoController extends Controller
     public function index()
     {
         $videos = Video::latest()->get();
+        $tags = Kategori::all();
         return view('education.index',[
             'videos' => $videos,
+            'tags' => $tags,
+            'active' => 0
         ]);
     }
 

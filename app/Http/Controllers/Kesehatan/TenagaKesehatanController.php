@@ -13,7 +13,11 @@ class TenagaKesehatanController extends Controller
 {
     public function index()
     {
-        //
+        $jenisKesehatan = JenisKesehatan::findorfail(1);
+        $dokters = $jenisKesehatan->tenagaKesehatans;
+        $active = 1;
+        $jenis = JenisKesehatan::all();
+        return view('health.doctor.index', compact('jenisKesehatan', 'dokters', 'active','jenis'));
     }
 
     public function create()
@@ -37,7 +41,9 @@ class TenagaKesehatanController extends Controller
     {
         $jenisKesehatan = JenisKesehatan::findorfail($id);
         $dokters = $jenisKesehatan->tenagaKesehatans;
-        return view('health.doctor.index', compact('jenisKesehatan', 'dokters'));
+        $active = $id;
+        $jenis = JenisKesehatan::all();
+        return view('health.doctor.index', compact('jenisKesehatan', 'dokters','active','jenis'));
     }
 
     public function edit($id)
