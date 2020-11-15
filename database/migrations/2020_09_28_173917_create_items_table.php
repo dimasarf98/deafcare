@@ -17,7 +17,8 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->foreignId('jenis_belanja_id');
             $table->string('nama');
-            $table->string('harga');
+            $table->longText('gambar');
+            $table->longText('deskripsi');
             $table->bigInteger('stok');
             $table->timestamps();
         });

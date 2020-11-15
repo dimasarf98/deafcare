@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     protected $guarded = [];
-
+    
     public function transaksis()
     {
         return $this->belongsToMany('App\Transaksi');

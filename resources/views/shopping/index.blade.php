@@ -28,15 +28,15 @@
         </div>
         <div class="row">
             @forelse ($items as $item)
-            <div class="col-6 mb-3">
-                <a class="card rounded-xl link-style-none" href="{{route('deafcare.belanja.user.item.show', $item->id)}}">
-                    <div class="card-body text-center">
-                        <img class="rounded mr-3 w-100 mb-3" src="/img/dummy.jpg" alt="..." style="object-fit:cover">
-                        <p class="font-weight-bold mb-1" style="line-height:1rem">{{$item->nama}}</p>
-                        <p class="mb-0">Rp. {{$item->harga}}</p>
-                    </div>
-                </a>
-            </div>
+                <div class="col-6 mb-3">
+                    <a class="card rounded-xl link-style-none" href="{{route('deafcare.belanja.user.item.show', $item->id)}}">
+                        <div class="card-body text-center">
+                            <img class="rounded mr-3 w-100 mb-3" src="{{$item->gambar  ??  asset('img/dummy.jpg')}}" alt="..." style="object-fit:cover">
+                            <p class="font-weight-bold mb-1" style="line-height:1rem">{{$item->nama}}</p>
+                            <p class="mb-0">Rp. {{$item->harga}}</p>
+                        </div>
+                    </a>
+                </div>
             @empty
             <div class="col-6 mb-3">
                 Tidak ada barang.
