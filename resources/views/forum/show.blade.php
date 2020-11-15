@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="w-100 d-flex justify-content-center mb-3">
-                    <img src="{{$forum->gambar}}" class="border rounded-lg w-100" alt="Foto {{$forum->nama}}" style="height: 200px; object-fit: cover">
+                    <img src="{{$forum->gambar ?? asset('img/dummy.jpg')}}" class="border rounded-lg w-100" alt="Foto {{$forum->nama}}" style="height: 200px; object-fit: cover">
                 </div>
                 <article>
                     <h1 class="h3 font-weight-bold">{{$forum->nama}}</h1>

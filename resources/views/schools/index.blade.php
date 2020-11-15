@@ -41,7 +41,7 @@
 
                     <div class='card rounded-xl link-style-none mb-3' href="#">
                         <div class="card-body d-flex">
-                            <img class="rounded mr-3" src="{{ $sekolah->gambar }}" alt="..."
+                            <img class="rounded mr-3" src="{{ $sekolah->gambar ?? asset('img/dummy.jpg') }}" alt="..."
                                 style="width: 82px; height:82px; object-fit:cover">
                             <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
                                 <div>

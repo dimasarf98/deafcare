@@ -63,7 +63,7 @@
                 :url="route('deafcare.forum.user.komunitas.index')" />
         </div>
         <div class="module-item">
-            <x-card-module bg-color="#7295ab" icon-class="fas fa-bullhorn" title="Berita dan Artikel"
+            <x-card-module bg-color="#7295ab" icon-class="fas fa-bullhorn" title="Forum"
                 :url="route('deafcare.informasi.artikel.index')" />
         </div>
         <div class="module-item">

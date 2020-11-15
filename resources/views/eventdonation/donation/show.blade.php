@@ -11,7 +11,7 @@
             <div class="row mb-3">
                 <div class="col-6">
                     <div class="poster">
-                        <img class="rounded mr-3" src="{{ asset('img/dummy.jpg') }}" alt="..." style="width: 100%; height:100%; object-fit:cover">
+                        <img class="rounded mr-3" src="{{ $donation->gambar ?? asset('img/dummy.jpg') }}" alt="..." style="width: 100%; height:100%; object-fit:cover">
                     </div>
                 </div>
                 <div class="col-6">

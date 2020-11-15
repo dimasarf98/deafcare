@@ -26,9 +26,6 @@
                     ***********
                 </li>
                 <li class="list-group-item">
-                    <a href="#" class="text-danger">Pengaturan Akun</a>
-                </li>
-                <li class="list-group-item">
                     <a href="#" class="text-danger" data-toggle="modal" data-target="#logoutModal">Logout</a>
                     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">

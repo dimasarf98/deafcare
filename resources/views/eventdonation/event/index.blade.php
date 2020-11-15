@@ -32,7 +32,7 @@
 
                     <div class='card rounded-xl link-style-none mb-3' href="{{route('event.show')}}">
                         <div class="card-body d-flex">
-                            <img class="rounded mr-3" src="{{ $event->gambar }}" alt="..."
+                            <img class="rounded mr-3" src="{{ $event->gambar ?? asset('img/dummy.jpg') }}" alt="..."
                                 style="width: 120px; height:169px; object-fit:cover">
                             <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
                                 <div>
