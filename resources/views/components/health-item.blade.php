@@ -1,3 +1,4 @@
+
 <a {{ $attributes->merge(['class' => 'card rounded-xl link-style-none']) }} href="{{$url}}">
     <div class="card-body d-flex">
         <img class="rounded mr-3" src="{{$imgSrc}}" alt="..." style="width: 72px; height:72px; object-fit:cover">

@@ -4,7 +4,7 @@
     <header class="sticky-top">
         <x-title-bar
             title="Edit Tenaga Kesehatan"
-            :back-url="route('deafcare.kesehatan.user.jenis.index')"></x-title-bar>
+            :back-url="route('deafcare.kesehatan.user.tengakaKesehatan.index')"></x-title-bar>
     </header>
     <main class="px-3 pt-3">
         <form method="POST" action="{{route('deafcare.kesehatan.admin.tenagaKesehatan.update', $tenagaKesehatan->id)}}" class="row">

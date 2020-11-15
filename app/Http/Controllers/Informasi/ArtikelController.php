@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Informasi;
 use App\Artikel;
 use App\Artikel_Kategori;
 use App\Kategori;
+use App\Reply;
 use App\Transformer\Artikel as TransformerArtikel;
+use App\Transformer\Reply as TransformerReply;
 use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
@@ -42,8 +44,8 @@ class ArtikelController extends Controller
     public function show($id)
     {
         $artikel = Artikel::findOrFail($id);
-
-        return view('information.show', compact('artikel'));
+        $replies = $artikel->replies()->get();
+        return view('information.show', compact('artikel','replies'));
     }
 
     public function edit($id)
@@ -84,5 +86,15 @@ class ArtikelController extends Controller
             'tags' => $tags,
             'active' => $id
         ]);
+    }
+
+    public function reply($id)
+    {
+        $response = TransformerReply::make($id);
+        auth()->user()->replies()->create($response);
+        $artikel = Artikel::findOrFail($id);
+        $replies = $artikel->replies;
+
+        return redirect(route('deafcare.informasi.artikel.show',$id));
     }
 }

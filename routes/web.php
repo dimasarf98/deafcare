@@ -1,5 +1,6 @@
 <?php
 
+use App\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -66,9 +67,6 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
     {
         Route::prefix('user')->name('user.')->group(function()
         {
-            Route::resource('jenis', 'JenisKesehatanController', [
-                'only' => ['index','show']
-            ]);
             Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
                 'only' => ['index','show']
             ]);
@@ -90,18 +88,18 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
             ]);
         });
 
-        Route::prefix('tenagakesehatan')->name('tenagakesehatan.')->group(function()
-        {
-            Route::resource('jenis', 'JenisKesehatanController', [
-                'only' => ['edit','update']
-            ]);
-            Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
-                'only' => ['edit','update']
-            ]);
-            Route::resource('jadwal', 'JadwalTenagaKesehatanController', [
-                'only' => ['edit','update']
-            ]);
-        });
+        // Route::prefix('tenagakesehatan')->name('tenagakesehatan.')->group(function()
+        // {
+        //     Route::resource('jenis', 'JenisKesehatanController', [
+        //         'only' => ['edit','update']
+        //     ]);
+        //     Route::resource('tenagaKesehatan', 'TenagaKesehatanController', [
+        //         'only' => ['edit','update']
+        //     ]);
+        //     Route::resource('jadwal', 'JadwalTenagaKesehatanController', [
+        //         'only' => ['edit','update']
+        //     ]);
+        // });
 
     });
 
@@ -115,7 +113,8 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
             Route::resource('sekolah', 'SekolahController', [
                 'only' => ['index','show']
             ]);
-
+            
+            Route::get('sekolah/jenis/{id}','SekolahController@getByJenis')->name('sekolah.jenis');
             Route::get('komunitas/profil','KomunitasController@profil')->name('komunitas.profil');
             Route::get('komunitas/kegiatan','KomunitasController@kegiatan')->name('komunitas.kegiatan');
         });
@@ -135,6 +134,7 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
     {
         Route::resource('artikel', 'ArtikelController');
         Route::get('artikel/getbytag/{tag}','ArtikelController@getByTag')->name('artikel.getbytag');
+        Route::post('artikel/reply/{id}','ArtikelController@reply')->name('artikel.reply');
     });
 
     Route::namespace('Belanja')->prefix('belanja')->name('belanja.')->group(function()
@@ -145,7 +145,8 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
                 'only' => ['index','show']
             ]);
             Route::get('cart', 'BelanjaController@cart')->name('cart');
-            Route::resource('transaksi', 'TransaksiController');
+            Route::get('item/jenis/{id}','BelanjaController@getJenis')->name('item.jenis');
+            
         });
 
         Route::prefix('vendor')->name('vendor.')->group(function()
@@ -160,11 +161,8 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
     {
         Route::prefix('user')->name('user.')->group(function()
         {
-            Route::resource('jenis', 'JenisPendengaranController',[
-                'only' => ['index']
-            ]);
-            Route::resource('jenis.hearingcenter', 'HearingCenterController',[
-                'only' => ['index']
+            Route::resource('hearingcenter', 'HearingCenterController',[
+                'only' => ['index','show']
             ]);
         });
 

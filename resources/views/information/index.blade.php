@@ -24,6 +24,7 @@
                 @foreach ($tags as $tag)
                     <a href="{{route('deafcare.informasi.artikel.getbytag', $tag->id)}}" class="btn {{ $active == $tag->id ? 'btn-danger' : 'btn-outline-danger' }} btn-sm px-3 py-1 rounded-pill mr-1 my-1">{{ $tag->nama }}</a>
                 @endforeach
+                <a href="{{route('deafcare.edukasi.video.index')}}" class="btn {{ $active == 0 ? 'btn-danger' : 'btn-outline-danger' }} btn-sm px-3 py-1 rounded-pill mr-1 my-1">Video</a>
             </div>
 
         </div>
@@ -32,7 +33,7 @@
                 @foreach ($articles as $article)
                     <a class='card rounded-xl text-dark mb-3' href="{{route('deafcare.informasi.artikel.show', $article->id)}}">
                         <div class="card-body d-flex">
-                            <img class="rounded mr-3" src="{{ $article->image }}" alt="..."
+                            <img class="rounded mr-3" src="{{ $article->image ?? asset('img/dummy.jpg') }}" alt="..."
                                 style="width: 120px; height:82px; object-fit:cover">
                             <div class="flex-fill d-flex flex-column justify-content-between" style="min-width: 0">
                                 <div>

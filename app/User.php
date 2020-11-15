@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
+
+    public function replies()
+    {
+        return $this->hasMany('App\Reply');
+    }
 }

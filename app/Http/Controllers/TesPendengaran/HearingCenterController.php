@@ -12,13 +12,18 @@ use Illuminate\Http\Request;
 
 class HearingCenterController extends Controller
 {
-    public function index($id)
+    public function index()
     {
-        $jenis = JenisTesPendengaran::findOrFail($id);
+        
+        $jenis = JenisTesPendengaran::findOrFail(1);
+        
         $hearingCenters = $jenis->tesPendengarans;
+        $jenisAll = JenisTesPendengaran::all();
         return view('hearingtest.testlocations.index',[
             'hearingCenters' => $hearingCenters,
-            'jenis' => $jenis
+            'jenis' => $jenis,
+            'jenisAll' => $jenisAll,
+            'active' => 1
         ]);
     }
 
@@ -40,16 +45,17 @@ class HearingCenterController extends Controller
         return redirect(route('deafcare.tespendengaran.user.jenis.hearingcenter.index', $idJenis));
     }
 
-    public function show($idJenis, $idTesPendengaran)
+    public function show($id)
     {
-//        $jenis = JenisTesPendengaran::findOrFail($idJenis);
-//        $hearingCenter = TesPendengaranModel::findOrFail($idTesPendengaran);
-//        $jadwals = $hearingCenter->jadwals;
-//        return view('hearingtest.testlocations.show', [
-//            'jenis' => $jenis,
-//            'hearingCenter' => $hearingCenter,
-//            'jadwals' => $jadwals
-//        ]);
+        $jenis = JenisTesPendengaran::findOrFail($id);
+        $hearingCenters = $jenis->tesPendengarans;
+        $jenisAll = JenisTesPendengaran::all();
+        return view('hearingtest.testlocations.index',[
+            'hearingCenters' => $hearingCenters,
+            'jenis' => $jenis,
+            'jenisAll' => $jenisAll,
+            'active' => $id
+        ]);
     }
 
     public function edit($idJenis, $idTes)
