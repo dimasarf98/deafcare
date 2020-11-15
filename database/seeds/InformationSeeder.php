@@ -29,6 +29,9 @@ class InformationSeeder extends Seeder
             [
                 'nama' => 'Tech'
             ],
+            [
+                'nama' => 'Edukasi'
+            ],
         ]);
 
         $id = Artikel::create(
@@ -129,6 +132,101 @@ class InformationSeeder extends Seeder
             ]
         );
         Kategori::findorfail(4)->artikels()->attach($id5);
+
+        $id6 = Artikel::create(
+            [
+                'judul' => 'Ini 7 Hal yang Harus Dilakukan Orang Tua Jika Memiliki Anak Tunarungu',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1604999436/qebqhqkve7gl1f5vnjut.png',
+                'isi' => '"Sebagai orangtua, dunia Moms mungkin akan runtuh saat mengetahui bahwa anak terlahir tunarungu. Moms tentu tidak pernah membayangkan Si Kecil akan terlahir spesial.
+                Jika menghadapi kondisi ini, Moms tidak boleh larut dalam kesedihan. Moms harus bangkit karena Si Kecil membutuhkan kehadiran Moms.
+                Dilansir dari Unshakeablejoy.com, ada 7 tips untuk orangtua yang membesarkan anak tunarungu. Berikut daftarnya.
+                1. Belajar bahasa isyarat
+                Sebelum mengajari anak bagaimana berkomunikasi, Moms harus terlebih dahulu belajar berkomunikasi dengan bahasanya. Moms bisa mengikuti kursus atau belajar bahasa isyarat dari internet.
+                2. Berkomunikasi efektif dengan menggunakan bahasa isyarat
+                Seiring dengan berjalannya waktu, Moms akan bisa berkomunikasi secara efektif dengan anak. Tapi, sampai waktunya tiba, Moms harus lebih bersabar untuk mengajari Si Kecil bahasa isyarat.
+                3. Baca buku mengenai tunarungu dan sejarahnya
+                Bekali pengetahuan Moms dengan berbagai informasi mengenai tunarungu untuk bisa mengasuh anak dengan baik.
+                4. Diskusikan masa depan anak dengan pasangan
+                Anak terlahir spesial, karena itu masa depan Si Kecil pun spesial. Moms bisa mulai mendiskusikan masa depannya dengan pasangan. Hal ini akan menentukan metode pengasuhan yang akan diterapkan.
+                5. Lakukan riset mengenai sekolah mana saja yang bisa diikuti anak
+                Mendekati usia sekolah anak, Moms harus mulai mencari sekolah yang tepat. Cari tahu terleih dahulu sekolah mana saja yang mungkin bisa Si Kecil ikuti sebelum menentukan pilihan.
+                6. Ajari kakak/adik anak bahasa isyarat
+                Untuk mempermudah komunikasi dan menghindari anak frustasi karena kesulitan berkomunikasi, ajarkan bahasa isyarat pada kakak/adik Si Kecil. dengan begitu, mereka bisa berkomunikasi dengan baik.
+                7. Bicarakan kondisi anak dengan keluarga
+                Keluarga perlu tahu tentang kondisi anak agar mereka tidak salah memperlakukannya. Kondisi Si Kecil memang spesial dan membutuhkan perlakukan yang agak berbeda dari saudara-saudaranya yang lain.
+                Komunikasi merupakan kunci agar anak bisa bergaul dengan teman-temannya. Komunikasi yang terbangun dari keluarga akan membuat Si Kecil lebih percaya diri untuk menghadapi dunia luar Moms.
+                
+                Itulah hal-hal yang perlu Moms ketahui saat membesarkan anak tunarungu. Selamat mencoba!"',
+                'user_id' => 1
+            ]
+        );
+        Kategori::findorfail(5)->artikels()->attach($id6);
+
+        $id7 = Artikel::create(
+            [
+                'judul' => 'Deteksi Dini Gangguan Pendengaran',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1604999436/qebqhqkve7gl1f5vnjut.png',
+                'isi' => '"Deteksi Dini Gangguan Pendengaran
+
+                Hal yang pertama kali di keluhkan terkait gejala gangguan pendengaran adalah kemampuan Bahasa si Kecil yang belum tercapai dibandingkan dengan balita seusianya. Sebagian besar Ibu baru menyadari keterlambatan bahasa pada si Kecil setelah ia berumur satu tahun. Padahal, menurut Kenna MA, seorang ahli gangguan pendengaran, gangguan pendengaran kongenital dapat diintervensi sebelum usia enam bulan, sehingga, saat si Kecil berusia tiga tahun ia akan memiliki kemampuan berbahasa normal dibandingkan dengan bayi yang diintervensi setelah berusia tiga bulan2.
+                
+                The Joint Committee on Infant Hearing tahun 2000 dan The American Academy of Pediatrics (AAP) tahun 1999 merekomendasikan skrining untuk bayi baru lahir dilakukan dalam 3 bulan pertama usianya dan intervensi sudah dilakukan sebelum usia 6 bulan. Oleh karena itu, Ibu harus memperhatikan perkembangan bahasa si Kecil dimulai dari sejak ia lahir.
+                Ibu bisa menilai bagaimana perkembangan bahasa si Kecil sudah sesuai dengan usianya atau belum melalui tabel Milestones of Language Development :
+                Lahir                  Respon suara, tertarik dengan wajah orang
+                2 - 4 bulan       reciprocal cooing, turn-taking
+                4 - 9 bulan       babbling (mengulang konsonan/kombinasi vokal)
+                6 bulan            merespon jika dipanggil nama
+                9 - 12 bulan      paham tentang perintah verbal,  menunjuk sesuatu
+                10 - 16 bulan    berbicara kata yang mudah, menunjuk bagian tubuh atau memahami                            kata sederhana
+                18 - 24 bulan    berbicara kosakata, mengucapkan dua kata
+                24 - 36 bulan    memahami orang-orang yang kenal
+                30 - 36 bulan    bercakap-cakap dengan bertanya dan menjawab pertanyaan
+                30 - 42 bulan    cerita pendek, bertanya ""mengapa""
+                36 - 48 bulan    paham dengan orang asing, kalimat terbentuk dengan baik
+                5 tahun            konsonan dasar sudah terbentuk
+                
+                Ibu bisa memberikan stimulus untuk menilai perkembangan bahasa si Kecil. Satu bulan pertama si Kecil dapat dievaluasi dengan memberikan suara yang keras dan tiba-tiba, apakah dia memberikan respon berupa mengedipkan mata, reflek tangan dan kaki terangkat ke atas, atau tiba-tiba terbangun. Bulan-bulan berikutnya Ibu bisa memberikan stimulus melalui suara-suara, memanggil nama, atau dengan mengamati perilakunya. Jika Ibu menemukan ketidaksesuaian perkembangan bahasa dengan umurnya, segera bawa si Kecil kepada tenaga medis terkait untuk dievaluasi lebih lanjut."',
+                'user_id' => 1
+            ]
+        );
+        Kategori::findorfail(5)->artikels()->attach($id7);
+
+        $id7 = Artikel::create(
+            [
+                'judul' => 'Pemeriksaan Pendengaran Pada Balita',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1604999436/qebqhqkve7gl1f5vnjut.png',
+                'isi' => '"Pada prinsipnya, terdapat dua macam cara pemeriksaan pendengaran pada balita: tes pendengaran secara subjektif dan objektif. Tes pendengaran subjektif dilakukan dengan mengamati perilaku balita terhadap rangsang suara (behavioral observation audiometry, visual re-inforcement audiometry), sedangkan tes yang objektif dilakukan dengan alat elektrofisiologi (OAE atau BERA). Tes pendengaran subjektif bisa dilakukan oleh tenaga medis pada umumnya, sedangkan tes objektif sebaiknya dilakukan oleh tenaga medis terlatih. Pemeriksaan pendengaran bisa dimulai dari bayi usia dua hari dengan OAE (Oto Acoustic Emission) dan atau BERA (Brainstem Evoke Response Audiometry).
+
+                OAE dapat digunakan untuk melihat kondisi koklea (rumah siput) di telinga yang dihasilkan oleh sel-sel rambut luar dan dipancarkan dalam bentuk energi akustik. Teknologi ini memungkinkan deteksi dini ketulian sejak si Kecil sejak berusia minimal 2 hari.
+                
+                Sedangkan BERA merupakan pemeriksaan untuk menilai fungsi pendengaran dan fungsi saraf VIII (N. auditorius). Pemeriksaan ini merekam potensial listrik yang dikeluarkan sel koklea selama menempuh perjalanan mulai dari telinga dalam hingga ke inti-inti tertentu di bidang otak.  BERA umumnya dilakukan pada si Kecil dengan faktor risiko anak terlambat bicara (delayed speech), anak dengan gangguan sifat dan tingkah laku (autisme), dan anak dengan cacat ganda (sindroma). BERA juga dilakukan untuk membantu memperkirakan jenis ketulian, menentukan prediksi ambang dengar dan membantu menentukan letak lesi di sepanjang serabut pendengaran sampai batang otak."',
+                'user_id' => 1
+            ]
+        );
+        Kategori::findorfail(5)->artikels()->attach($id7);
+
+        $id8 = Artikel::create(
+            [
+                'judul' => 'Faktor dan Penyebab Gangguan Pendengaran',
+                'gambar' => 'https://res.cloudinary.com/dhavbtjea/image/upload/v1604999436/qebqhqkve7gl1f5vnjut.png',
+                'isi' => '"Periode penting perkembangan pendengaran dan kemampuan berbicara anak dimulai sejak enam bulan pertama kehidupannya, berlanjut sampai ia berusia dua tahun.
+                Sejak usia janin berumur 20 minggu, indera yang pertama kali berfungsi dengan sempurna adalah indera pendengaran. Si Kecil dapat mempelajari banyak hal dari mendengar sejak dalam kandungan. Namun, jika organ pendengaran mengalami gangguan, Ibu perlu waspada karena gangguan pendengaran sejak masa bayi atau balita akan berpengaruh pada kemampuan berbahasa, sosial, dan emosionalnya. Cari tahu informasi lebih lengkap seputar tes pendengaran bagi balita dari Tim Ahli Nutriclub.
+                
+                Terdapat berbagai faktor risiko terjadinya gangguan pendengaran, diantaranya adalah:
+                1. Kondisi atau penyakit yang memerlukan perawatan di Neonatus Intensive Care Unit (NICU) selama 48 jam atau lebih setelah kelahiran
+                2. Keadaan yang berhubungan dengan sindroma tertentu yang menyebabkan tuli sensorineural atau konduktif
+                3. Riwayat keluarga dengan gangguan pendengaran sensorineural yang menetap sejak lahir
+                4. Lahir belum cukup bulan atau pematur
+                5. Berat badan lahir rendah (BB kurang dari 1500 gram)
+                6. Skor APGAR yang berkisar dari 0-3 dan 4-10 dan hiperbilirubin.
+                7. Riwayat infeksi TORCH saat masa kehamilan
+                8. Kelainan tulang wajah/ tengkorak.
+                
+                Balita dengan salah satu faktor risiko tersebut mempunyai kemungkinan mengalami ketulian 10 kali lebih besar dibandingkan dengan balita yang tidak memilikinya. Bila terdapat tiga buah faktor risiko, kecenderungan menderita ketulian diperkirakan sampai 63 kali lipat lebih besar. Sedangkan, untuk bayi baru lahir, dan dirawat di ruang intensif (NICU) akan berisiko mengalami ketulian sebesar 10 kali lipat bayi normal."',
+                'user_id' => 1
+            ]
+        );
+        Kategori::findorfail(5)->artikels()->attach($id8);
 
     }
 }

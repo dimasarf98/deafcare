@@ -105,8 +105,8 @@ class BelanjaSeeder extends Seeder
                 'stok' => 100,
             ],
             [
-                'jenis_belanja_id' => 4,
-                'nama' => 'Buku Memahami Anak Tuna Rungu',
+                'jenis_belanja_id' => 2,
+                'nama' => 'Baterai',
                 'deskripsi' => 'Spek Size 1	Ukuran	10	Spek Size 3	Ukuran	312
                 warna	kuning		warna	coklat
                 dimensi	5,8 mm x 3,6 mm		dimensi	7,9 mm x 3,6 mm
