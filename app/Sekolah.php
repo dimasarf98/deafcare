@@ -9,7 +9,7 @@ class Sekolah extends Model
     protected $fillable = ['nama', 'alamat','no_telp','gambar', 'jenis_sekolah_id'];
     public function profilSekolah()
     {
-        return $this->hasOne('App\profilSekolah');
+        return $this->hasOne('App\ProfilSekolah');
     }
 
     public function jenis()
