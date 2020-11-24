@@ -2,7 +2,7 @@
 
 @section('content')
 <header class="sticky-top">
-    <x-title-bar title="Aktivitas" />
+    <x-title-bar title="Pencarian" />
 </header>
 <main class="px-3" style="padding-bottom: 64px;">
     <div class="row">
