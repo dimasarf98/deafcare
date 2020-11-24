@@ -80,10 +80,11 @@ Route::middleware('auth')->prefix('deafcare')->name('deafcare.')->group(function
     Route::get('home', 'HomeController@index')->name('home');
     Route::get('profil', 'Profil\ProfilController@index')->name('profil');
     Route::resource('aktivitas', 'ActivityController');
+    Route::post('search', 'SearchController@index')->name('search');
     Route::namespace('Edukasi')->prefix('edukasi')->name('edukasi.')->group(function()
     {
         Route::resource('video', 'VideoController', [
-            'only' => ['index','show']
+        'only' => ['index','show']
         ]);
 
         Route::prefix('admin')->name('admin.')->group(function()

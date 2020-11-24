@@ -38,15 +38,18 @@
     </div>
     <div class="row mb-3">
         <div class="col-12">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Cari Apapun" aria-label="Cari Informasi"
-                    aria-describedby="btn-search">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="btn-search">
-                        <i class="fa fa-search"></i>
-                    </button>
+            <form action="{{route('deafcare.search')}}" method="POST">
+                @csrf
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cari Apapun" aria-label="Cari Informasi"
+                        aria-describedby="btn-search" name="query">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="btn-search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <div class="module-wrapper mb-3">
